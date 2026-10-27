@@ -193,11 +193,13 @@
       <li><a href="#favorites">즐겨찾기 ★</a></li>
       <li><a href="#conti">콘티 만들기</a></li>
       <li><a href="#picker">콘티에 곡 고르기</a></li>
+      <li><a href="#print">인쇄 · PDF 저장</a></li>
       <li><a href="#share">공유 링크 · 예배 중 악보 넘기기</a></li>
       <li><a href="#team">팀 만들기 · 초대</a></li>
       <li><a href="#roles">누가 무엇을 할 수 있나요</a></li>
       <li><a href="#tools">연습 도구</a></li>
       <li><a href="#account">비밀번호 · 계정</a></li>
+      <li><a href="#copyright">저작권 안내</a></li>
       <li><a href="#faq">자주 묻는 질문 · 문제 해결</a></li>
     </ol>
   </nav>
@@ -261,7 +263,8 @@
         <ul>
           <li><strong>YouTube URL</strong> — 예배곡 영상 주소</li>
           <li><strong>MR / 반주 URL</strong></li>
-          <li><strong>악보 이미지 URL</strong> · <strong>악보 PDF URL</strong> — 인터넷에 올라가 있는 악보 파일의 주소</li>
+          <li><strong>악보 이미지</strong> — <span class="ui">📷 악보 사진 올리기</span>를 누르면 휴대폰으로 바로 찍거나 앨범에서 고를 수 있습니다. 사진은 교회 구글 드라이브 폴더에 저장되고 주소가 자동으로 채워집니다. 인터넷에 있는 악보 이미지 주소를 직접 붙여 넣어도 됩니다.</li>
+          <li><strong>악보 PDF URL</strong> — 인터넷에 올라가 있는 PDF 악보의 주소</li>
           <li><strong>송폼 구조</strong> — 예: Intro - Verse - Chorus - Bridge</li>
           <li><strong>메모</strong> — 연주 포인트, 전조 등</li>
         </ul>
@@ -269,7 +272,9 @@
       <li><span class="ui">곡 저장</span>을 누릅니다.</li>
     </ol>
     <div class="tip"><b>악보 찾기</b> — 곡 제목을 입력하고 제목 칸 옆 <span class="ui">🔍 구글</span>을 누르면 "곡 제목 악보"로 구글 검색이 바로 열립니다.</div>
-    <div class="warn">악보는 파일을 직접 올리는 방식이 아니라 <strong>인터넷 주소(URL)를 붙여 넣는 방식</strong>입니다. 악보 이미지는 브라우저 주소창에 넣었을 때 그림이 바로 열리는 주소여야 합니다.</div>
+    <div class="tip"><b>사진 올리기 팁</b> — 큰 휴대폰 사진은 자동으로 알맞은 크기로 줄여서 올립니다. 사진을 올린 뒤 꼭 <span class="ui">곡 저장</span>(수정 중이면 저장)을 눌러야 반영됩니다. 이미 다른 사진이 있으면 새 사진으로 바뀝니다.</div>
+    <div class="warn"><strong>교회가 사용 권한을 가진 악보만</strong> 올려 주세요. 출판사·저작권자의 허락 범위를 넘는 악보를 올리면 안 됩니다. (<a href="#copyright">저작권 안내</a>)</div>
+    <div class="tip"><b>PDF 악보·인터넷 이미지</b> — PDF는 파일을 올리는 대신 주소(URL)를 넣습니다. 이미지 주소는 브라우저 주소창에 넣었을 때 그림이 바로 열리는 주소여야 합니다.</div>
 
     <h3>곡 찾기 · 보기 · 고치기</h3>
     <ul>
@@ -279,6 +284,14 @@
       <li><span class="ui">수정</span> — 곡 정보를 고칩니다. 팀 곡은 팀원 누구나 고칠 수 있습니다.</li>
       <li><span class="ui">삭제</span> — 개인 곡은 본인이, <strong>팀 곡은 팀장만</strong> 지울 수 있습니다. 팀원에게는 팀 곡의 삭제 버튼이 보이지 않습니다.</li>
       <li>팀 공간에서는 곡마다 <strong>등록: 이메일</strong>이 표시되어 누가 올린 곡인지 알 수 있습니다.</li>
+      <li><strong>마지막으로 부른 날</strong> — 날짜가 있는 콘티에 들어간 곡은 "마지막으로 부른 날: 10월 25일 (일)"처럼 표시됩니다. 같은 곡을 너무 자주 부르지 않게 조절할 때 쓰세요.</li>
+    </ul>
+
+    <h3>내보내기 · 백업</h3>
+    <ul>
+      <li><span class="ui">⬇ 엑셀</span> — 지금 보이는 곡 목록(검색·정렬·즐겨찾기 조건 그대로)을 엑셀에서 열 수 있는 파일(CSV)로 받습니다.</li>
+      <li><span class="ui">⬇ 백업</span> — 지금 작업 공간의 곡과 콘티 전체를 백업 파일(JSON)로 받습니다.</li>
+      <li>받은 파일 맨 위에는 저작권 안내 문구가 함께 들어갑니다.</li>
     </ul>
   </section>
 
@@ -299,14 +312,18 @@
     <h2>📋 콘티 만들기</h2>
     <ol class="steps">
       <li>맨 위 작업 공간이 <strong>팀</strong>으로 되어 있는지 확인합니다. (팀원과 함께 볼 콘티라면)</li>
-      <li><span class="ui">콘티</span> 탭에서 콘티 이름을 입력하고 <span class="ui">콘티 저장</span>을 누릅니다. 예: <code>11월 1주 주일예배</code></li>
-      <li>왼쪽 <strong>콘티 목록</strong>에서 콘티를 누르면 오른쪽에 상세 화면이 열립니다.</li>
+      <li><span class="ui">콘티</span> 탭에서 콘티 이름을 입력하고 <strong>예배 날짜</strong>를 고른 뒤 <span class="ui">콘티 저장</span>을 누릅니다. 날짜는 처음부터 <strong>다가오는 주일</strong>로 채워져 있습니다. 예: <code>11월 1주 주일예배</code></li>
+      <li>왼쪽 <strong>콘티 목록</strong>은 <strong>월별</strong>로 묶여 최근 날짜부터 보입니다(날짜 없는 콘티는 맨 아래 "날짜 없음"). 콘티를 누르면 오른쪽에 상세 화면이 열립니다.</li>
       <li>아래 <strong>곡 추가</strong>에서 곡을 체크하고 <span class="ui">선택한 곡 추가</span>를 누릅니다. (<a href="#picker">곡 고르기</a> 참고)</li>
       <li><strong>순서 바꾸기</strong> — 콘티 순서의 곡을 마우스로 끌어 놓으면 순서가 바뀌고 바로 저장됩니다.</li>
     </ol>
     <h3>콘티 화면의 기능</h3>
     <ul>
-      <li><span class="ui">💬 카톡 요약</span> — 곡 순서·아티스트·Key·BPM·송폼(공유 링크가 있으면 링크까지)을 카카오톡에 붙여 넣기 좋은 글로 복사합니다.</li>
+      <li><strong>예배 날짜 바꾸기</strong> — 콘티 이름 아래 <span class="ui">예배 날짜</span>를 바꾸면 바로 저장됩니다.</li>
+      <li><span class="ui">📄 복제</span> — 지금 콘티를 그대로 복사해 새 콘티를 만듭니다. 곡 순서와 콘티별 Key·메모까지 복사되고, 날짜는 <strong>원래 날짜 + 7일</strong>(날짜가 없으면 다가오는 주일)로 정해집니다. 지난주 콘티를 고쳐 쓸 때 편합니다.</li>
+      <li><span class="ui">Key·메모</span> — 곡 옆 버튼을 누르면 <strong>이 콘티에서만</strong> 쓸 Key와 메모를 정할 수 있습니다. 곡 목록의 원래 정보는 바뀌지 않습니다. 바꾼 Key는 <span class="ui">D ← C</span>처럼(이번 Key ← 원래 Key) 표시되고, 카톡 요약·공유 화면·인쇄에 모두 반영됩니다. <span class="ui">원래대로</span>를 누르면 되돌립니다.</li>
+      <li><span class="ui">🖨 인쇄·PDF</span> — 콘티 악보를 종이에 인쇄하거나 PDF 파일로 저장합니다. (<a href="#print">인쇄 · PDF 저장</a>)</li>
+      <li><span class="ui">💬 카톡 요약</span> — 예배 날짜, 곡 순서·아티스트·Key(콘티별 Key 반영)·BPM·송폼·메모(공유 링크가 있으면 링크까지)를 카카오톡에 붙여 넣기 좋은 글로 복사합니다.</li>
       <li><span class="ui">🔗 공유 링크</span> — 로그인 없이 볼 수 있는 링크를 만듭니다. (<a href="#share">공유 링크</a> 참고)</li>
       <li><span class="ui">▶ 연속재생</span> — 콘티의 유튜브 영상을 차례로 이어서 재생합니다. 연습할 때 편합니다.</li>
       <li><strong>연습 완료 체크</strong> — 곡마다 체크해 두면 "연습 완료 3 / 5곡"처럼 진행 상황이 보이고, 다 하면 🎉가 나옵니다. 체크는 <em>지금 쓰는 기기에만</em> 저장됩니다.</li>
@@ -331,6 +348,30 @@
     <div class="tip"><b>같은 공간의 곡만</b> — 팀 콘티에는 팀 곡만, 개인 콘티에는 내 개인 곡만 담을 수 있습니다. 이미 콘티에 들어 있는 곡은 목록에 나오지 않습니다.</div>
   </section>
 
+  <!-- 인쇄 -->
+  <section id="print">
+    <h2>🖨 인쇄 · PDF 저장</h2>
+    <p class="lead">콘티의 악보를 종이 한 장에 여러 곡씩 배치해 인쇄하거나, PDF 파일로 저장해 보관·전송할 수 있습니다.</p>
+    <ol class="steps">
+      <li>콘티 상세 화면에서 <span class="ui">🖨 인쇄·PDF</span>를 누릅니다.</li>
+      <li>위쪽에서 고릅니다.
+        <ul>
+          <li><strong>용지</strong> — A4 세로 · A4 가로 · Letter 세로</li>
+          <li><strong>한 장에</strong> — A4 세로·Letter: 1 / 2 / 4곡, A4 가로: 1 / 2 / 3곡</li>
+          <li><strong>첫 장에 곡 순서</strong> — 첫 장 맨 위에 곡 순서·Key·BPM 목록을 넣습니다.</li>
+        </ul>
+        고른 설정은 다음에도 기억됩니다.</li>
+      <li>아래 미리보기를 확인하고 <span class="ui">인쇄 / PDF로 저장</span>을 누릅니다.</li>
+      <li>인쇄 창에서 프린터를 고르면 종이로, 대상을 <strong>"PDF로 저장"</strong>으로 고르면 PDF 파일로 받습니다. 여백은 <strong>없음</strong>, <strong>배경 그래픽</strong>은 켜 두세요.</li>
+    </ol>
+    <ul>
+      <li>각 장 맨 위에는 예배 날짜·콘티 이름과 쪽 번호가, 곡마다 번호·제목·Key(콘티별 Key 반영)와 메모가 표시됩니다.</li>
+      <li>악보 이미지가 없는 곡은 "악보 이미지 없음"으로 표시되고, PDF 악보가 있으면 그 주소가 함께 적힙니다.</li>
+      <li>모든 장 아래에 <strong>저작권 안내 문구</strong>가 함께 인쇄됩니다.</li>
+    </ul>
+    <div class="warn">악보 인쇄·PDF는 복제에 해당합니다. 교회가 가진 사용 권한 범위 안에서만 쓰고, 단체 대화방·인터넷에 올리지 마세요.</div>
+  </section>
+
   <!-- 8. 공유 -->
   <section id="share">
     <h2>🔗 공유 링크 · 예배 중 악보 넘기기</h2>
@@ -340,6 +381,14 @@
       <li>악보 화면으로 바로 열리는 링크가 필요하면 <strong>악보만</strong> 링크를 복사합니다.</li>
       <li>카카오톡·문자로 팀원에게 보냅니다. 받은 사람은 <strong>로그인 없이</strong> 바로 볼 수 있습니다.</li>
     </ol>
+    <h3>🔒 공유 비밀번호 (선택)</h3>
+    <ol class="steps">
+      <li>공유 링크를 만든 뒤 아래 <strong>공유 비밀번호</strong> 칸에 숫자 4~8자리를 넣고 <span class="ui">걸기</span>를 누릅니다.</li>
+      <li>링크를 연 사람은 비밀번호를 넣어야 콘티를 볼 수 있습니다. 한 번 맞히면 그 창을 닫을 때까지 다시 묻지 않습니다.</li>
+      <li><span class="ui">바꾸기</span>로 새 비밀번호를, <span class="ui">해제</span>로 비밀번호 없이 되돌릴 수 있습니다.</li>
+      <li>비밀번호를 <strong>5번 틀리면 그 링크가 15분 동안 잠깁니다.</strong> 급하면 콘티 화면에서 비밀번호를 새로 걸면 잠금이 바로 풀립니다.</li>
+    </ol>
+    <div class="tip"><b>링크와 비밀번호는 따로</b> — 링크와 비밀번호를 같은 메시지에 보내면 효과가 줄어듭니다. 비밀번호는 팀원에게 따로 알려 주세요. 로그인한 팀원은 앱의 콘티 화면에서 비밀번호 없이 곡을 넘길 수 있습니다.</div>
     <h3>공유 화면 쓰는 법</h3>
     <ul>
       <li><span class="ui">📋 전체 보기</span> — 곡 목록, 악보, 유튜브, MR, PDF, 메모가 모두 보이는 화면</li>
@@ -348,13 +397,14 @@
       <li><span class="ui">맞춤</span> · <span class="ui">−</span> · <span class="ui">+</span> — 악보 전체를 화면에 맞추거나 확대·축소합니다.</li>
       <li><span class="ui">⊞ 목록</span> — 여러 장 악보를 한눈에 보고 원하는 장으로 이동합니다.</li>
       <li><span class="ui">🎧 MR 열기</span> · <span class="ui">📄 PDF 열기</span> — 반주와 PDF 악보를 엽니다.</li>
+      <li>화면 위에는 예배 날짜와 콘티 이름이, 맨 아래에는 저작권 안내가 표시됩니다. 콘티별 Key·메모도 그대로 보입니다.</li>
     </ul>
     <h3>실시간 동기화 (인도자가 넘기면 모두 함께)</h3>
     <ul>
       <li>화면에 <span class="ui">🔴 실시간 동기화 중</span>이 보이면, 한 사람이 곡을 넘길 때 같은 링크를 연 모든 사람의 화면이 <strong>3초 안에</strong> 함께 넘어갑니다.</li>
       <li>예배 전에 팀원 모두 같은 링크에 들어와 첫 곡이 맞게 보이는지 한 번 확인하세요.</li>
     </ul>
-    <div class="warn">공유 링크를 가진 사람은 누구나 곡을 넘길 수 있습니다. 예배 중에는 인도자만 넘기도록 미리 약속하고, 링크는 팀원에게만 보내 주세요.</div>
+    <div class="warn">공유 링크(비밀번호를 걸었다면 비밀번호까지)를 아는 사람은 누구나 곡을 넘길 수 있습니다. 예배 중에는 인도자만 넘기도록 미리 약속하고, 링크는 팀원에게만 보내 주세요.</div>
   </section>
 
   <!-- 9. 팀 -->
@@ -392,10 +442,15 @@
           <tr><td>팀 곡 삭제</td><td class="y">○</td><td class="n">✕</td><td class="n">✕</td></tr>
           <tr><td>팀 콘티 만들기 · 곡 담기 · 순서 바꾸기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
           <tr><td>팀 콘티 삭제</td><td class="y">○</td><td class="n">내가 만든 것만</td><td class="n">✕</td></tr>
-          <tr><td>공유 화면에서 곡 넘기기</td><td class="y">○</td><td class="y">○</td><td class="y">○</td></tr>
+          <tr><td>콘티 날짜 · 복제 · 콘티별 Key·메모</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
+          <tr><td>인쇄 · PDF 저장</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
+          <tr><td>악보 사진 올리기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
+          <tr><td>공유 링크 만들기 · 공유 비밀번호 걸기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
+          <tr><td>공유 화면에서 곡 넘기기</td><td class="y">○</td><td class="y">○</td><td class="y">○ (비밀번호가 있으면 비밀번호 필요)</td></tr>
           <tr><td>팀원 비밀번호 초기화</td><td class="y">○</td><td class="n">✕</td><td class="n">✕</td></tr>
           <tr><td>팀 삭제</td><td class="y">○</td><td class="n">✕ (나가기만)</td><td class="n">✕</td></tr>
           <tr><td>즐겨찾기 ★</td><td class="y">나만의 목록</td><td class="y">나만의 목록</td><td class="n">✕</td></tr>
+          <tr><td>곡 목록 엑셀 · 백업 받기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
         </tbody>
       </table>
     </div>
@@ -431,6 +486,21 @@
     <div class="warn">비밀번호(임시 비밀번호 포함)를 단체 대화방이나 화면 캡처로 공유하지 마세요. 꼭 본인에게만 직접 전달해 주세요.</div>
   </section>
 
+  <!-- 저작권 -->
+  <section id="copyright">
+    <h2>©️ 저작권 안내</h2>
+    <p class="lead">찬양 악보와 가사에는 저작권이 있습니다. 앱에서 인쇄·PDF·엑셀·백업으로 내려받는 자료와 공유 화면에는 아래 문구가 함께 표시됩니다.</p>
+    <div class="notice" style="margin:8px 0">
+      <div class="icon">©️</div>
+      <div>※ 악보·가사의 저작권은 각 저작권자(작사·작곡·편곡자 및 출판사)에게 있습니다. 이 자료는 라온동행교회 예배 준비용으로만 사용하며, 교회가 가진 사용 권한 밖의 복제·배포·온라인 게시를 금합니다.</div>
+    </div>
+    <ul>
+      <li>악보 사진은 <strong>교회가 사용 권한을 가진 악보만</strong> 올려 주세요.</li>
+      <li>인쇄물·PDF는 예배와 연습에만 쓰고, 단체 대화방이나 인터넷에 올리지 마세요.</li>
+      <li>공유 링크는 팀원에게만 보내고, 필요하면 <a href="#share">공유 비밀번호</a>를 걸어 두세요.</li>
+    </ul>
+  </section>
+
   <!-- 13. FAQ -->
   <section id="faq">
     <h2>❓ 자주 묻는 질문 · 문제 해결</h2>
@@ -461,6 +531,22 @@
     <details>
       <summary>예배 중에 화면이 같이 안 넘어가요</summary>
       <p>모두 <strong>같은 공유 링크</strong>를 열었는지, 화면에 <span class="ui">🔴 실시간 동기화 중</span>이 보이는지 확인하세요. 넘긴 뒤 최대 3초 정도 걸릴 수 있습니다. 인터넷이 약하면 늦어질 수 있으니 예배 전에 한 번 맞춰 보세요.</p>
+    </details>
+    <details>
+      <summary>"악보 사진 올리기가 아직 설정되지 않았습니다"라고 나와요</summary>
+      <p>교회 구글 드라이브 연결 설정이 끝나기 전에는 사진을 올릴 수 없습니다. 관리자에게 문의해 주세요. 그동안에는 악보 이미지 주소를 직접 넣어 쓰실 수 있습니다.</p>
+    </details>
+    <details>
+      <summary>사진을 올렸는데 곡에 악보가 안 보여요</summary>
+      <p>사진을 올린 뒤 <span class="ui">곡 저장</span>(수정 중이면 <span class="ui">저장</span>)을 눌렀는지 확인하세요. 저장해야 곡에 반영됩니다.</p>
+    </details>
+    <details>
+      <summary>공유 링크를 열었더니 비밀번호를 물어요</summary>
+      <p>공유한 분이 공유 비밀번호를 걸어 둔 콘티입니다. 받은 숫자 비밀번호를 넣으세요. 모르면 공유한 분에게 물어보세요. "15분 동안 잠겼습니다"가 나오면 비밀번호를 여러 번 틀린 것이니 잠시 뒤 다시 시도하거나, 공유한 분에게 비밀번호를 새로 걸어 달라고 하세요.</p>
+    </details>
+    <details>
+      <summary>인쇄했더니 악보가 잘리거나 여백이 생겨요</summary>
+      <p>인쇄 창에서 여백을 <strong>없음</strong>으로, 배율은 <strong>기본(100%)</strong>으로 두세요. 용지 방향(세로/가로)이 앱에서 고른 용지와 같은지도 확인하세요.</p>
     </details>
     <details>
       <summary>찾는 곡이 목록에 없어요</summary>
