@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAON music sheet 사용법</title>
+<meta name="description" content="라온동행교회 찬양팀 악보·콘티 관리 앱 RAON music sheet의 상세 사용 안내서">
+<style>
+  :root {
+    --bg: #f4f7f5;
+    --surface: #ffffff;
+    --surface-2: #f8fafc;
+    --text: #0f172a;
+    --text-2: #475569;
+    --line: #e2e8f0;
+    --brand: #14532d;
+    --brand-2: #16a34a;
+    --brand-soft: #dcfce7;
+    --brand-ink: #15803d;
+    --note-bg: #fef9c3;
+    --note-ink: #854d0e;
+    --warn-bg: #fee2e2;
+    --warn-ink: #991b1b;
+    --shadow: 0 1px 2px rgba(15, 23, 42, .06), 0 4px 16px rgba(15, 23, 42, .06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0b1210;
+      --surface: #111a17;
+      --surface-2: #16211d;
+      --text: #e5efe9;
+      --text-2: #a3b8ad;
+      --line: #23332c;
+      --brand: #4ade80;
+      --brand-2: #22c55e;
+      --brand-soft: #163322;
+      --brand-ink: #86efac;
+      --note-bg: #3a3212;
+      --note-ink: #fde68a;
+      --warn-bg: #3b1515;
+      --warn-ink: #fca5a5;
+      --shadow: none;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b1210; --surface: #111a17; --surface-2: #16211d; --text: #e5efe9; --text-2: #a3b8ad;
+    --line: #23332c; --brand: #4ade80; --brand-2: #22c55e; --brand-soft: #163322; --brand-ink: #86efac;
+    --note-bg: #3a3212; --note-ink: #fde68a; --warn-bg: #3b1515; --warn-ink: #fca5a5; --shadow: none;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+
+  /* 맨 위·맨 아래 바로가기 */
+  .shortcut {
+    background: linear-gradient(135deg, #14532d, #16a34a);
+    color: #fff;
+  }
+  .shortcut .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 14px; padding-bottom: 14px; }
+  .shortcut strong { font-size: 17px; }
+  .shortcut span { opacity: .85; font-size: 14px; }
+  .go-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #fff; color: #14532d; font-weight: 700; text-decoration: none;
+    padding: 10px 18px; border-radius: 999px; white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  }
+  .go-btn:hover { background: #f0fdf4; }
+  .go-btn:focus-visible { outline: 3px solid #fde68a; outline-offset: 2px; }
+
+  header.hero { padding: 36px 0 8px; }
+  header.hero h1 { font-size: clamp(26px, 5vw, 36px); line-height: 1.25; margin: 0 0 6px; }
+  header.hero p { color: var(--text-2); margin: 0; }
+
+  .notice {
+    display: flex; gap: 12px; align-items: flex-start;
+    background: var(--note-bg); color: var(--note-ink);
+    border-radius: 14px; padding: 16px 18px; margin: 22px 0;
+  }
+  .notice .icon { font-size: 22px; line-height: 1.3; }
+  .notice b { display: block; font-size: 17px; }
+
+  nav.toc { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; box-shadow: var(--shadow); }
+  nav.toc h2 { font-size: 15px; margin: 0 0 8px; color: var(--text-2); }
+  nav.toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 28px; }
+  nav.toc li { break-inside: avoid; }
+  nav.toc a { color: var(--brand-ink); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px 22px 18px; margin: 18px 0; box-shadow: var(--shadow); scroll-margin-top: 12px; }
+  section > h2 { font-size: 22px; margin: 0 0 4px; display: flex; align-items: center; gap: 8px; }
+  section > p.lead { color: var(--text-2); margin: 0 0 14px; }
+  h3 { font-size: 17px; margin: 22px 0 8px; }
+  h3:first-of-type { margin-top: 12px; }
+
+  ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 8px 0; }
+  ol.steps > li { counter-increment: s; position: relative; padding: 2px 0 10px 40px; }
+  ol.steps > li::before {
+    content: counter(s); position: absolute; left: 0; top: 2px;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--brand-soft); color: var(--brand-ink);
+    font-weight: 700; font-size: 14px; display: grid; place-items: center;
+  }
+  ul { padding-left: 20px; margin: 6px 0; }
+  li { margin: 2px 0; }
+
+  .ui {
+    display: inline-block; padding: 0 8px; border-radius: 6px;
+    background: var(--surface-2); border: 1px solid var(--line);
+    font-size: 14px; font-weight: 600; white-space: nowrap;
+  }
+  .tip, .warn {
+    border-radius: 12px; padding: 12px 14px; margin: 12px 0; font-size: 15px;
+  }
+  .tip { background: var(--brand-soft); color: var(--text); }
+  .tip b { color: var(--brand-ink); }
+  .warn { background: var(--warn-bg); color: var(--warn-ink); }
+
+  .table-wrap { overflow-x: auto; margin: 10px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; min-width: 440px; }
+  th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--surface-2); }
+  td.y { color: var(--brand-ink); font-weight: 700; text-align: center; }
+  td.n { color: var(--text-2); text-align: center; }
+
+  .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 10px 0; }
+  .card { background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+  .card b { display: block; margin-bottom: 2px; }
+  .card p { margin: 0; color: var(--text-2); font-size: 15px; }
+
+  details { border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; margin: 8px 0; background: var(--surface-2); }
+  summary { cursor: pointer; font-weight: 700; }
+  details p, details ul { margin: 8px 0 2px; }
+
+  .theme-toggle { background: none; border: 1px solid var(--line); color: var(--text-2); border-radius: 999px; padding: 4px 12px; font-size: 13px; cursor: pointer; }
+  footer.meta { color: var(--text-2); font-size: 14px; text-align: center; padding: 18px 0 26px; }
+
+  @media (max-width: 600px) {
+    nav.toc ol { columns: 1; }
+    .cards { grid-template-columns: 1fr; }
+    section { padding: 18px 16px 14px; }
+    .go-btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 맨 위 바로가기 -->
+<div class="shortcut" id="top">
+  <div class="wrap">
+    <div>
+      <strong>RAON music sheet</strong><br>
+      <span>라온동행교회 찬양팀 악보 &amp; 콘티 관리</span>
+    </div>
+    <a class="go-btn" href="https://raon-music-sheet.vercel.app" target="_blank" rel="noopener">🎵 앱 바로가기 →</a>
+  </div>
+</div>
+
+<main class="wrap">
+  <header class="hero">
+    <h1>RAON music sheet 사용법</h1>
+    <p>회원가입부터 콘티 작성, 예배 중 악보 넘기기, 팀 운영까지 처음 쓰는 분도 따라 할 수 있도록 정리했습니다.</p>
+  </header>
+
+  <div class="notice" role="note">
+    <div class="icon">📢</div>
+    <div>
+      <b>곡 업데이트 안내 — 하루에 30곡씩 추가됩니다</b>
+      찬양팀이 함께 쓰는 곡 목록에 <strong>하루 30곡씩</strong> 새 곡을 업데이트할 예정입니다.
+      찾는 곡이 아직 없다면 며칠 뒤 다시 확인해 주세요. 급하게 필요한 곡은 직접 추가하실 수 있습니다(<a href="#songs">곡 목록</a> 참고).
+      <br><small>2026년 10월 27일 기준</small>
+    </div>
+  </div>
+
+  <nav class="toc" aria-label="목차">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#start">시작하기 (가입·로그인)</a></li>
+      <li><a href="#layout">화면 구성</a></li>
+      <li><a href="#workspace">작업 공간 (개인 / 팀)</a></li>
+      <li><a href="#songs">곡 목록 · 곡 추가</a></li>
+      <li><a href="#favorites">즐겨찾기 ★</a></li>
+      <li><a href="#conti">콘티 만들기</a></li>
+      <li><a href="#picker">콘티에 곡 고르기</a></li>
+      <li><a href="#share">공유 링크 · 예배 중 악보 넘기기</a></li>
+      <li><a href="#team">팀 만들기 · 초대</a></li>
+      <li><a href="#roles">누가 무엇을 할 수 있나요</a></li>
+      <li><a href="#tools">연습 도구</a></li>
+      <li><a href="#account">비밀번호 · 계정</a></li>
+      <li><a href="#faq">자주 묻는 질문 · 문제 해결</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1. 시작하기 -->
+  <section id="start">
+    <h2>🚪 시작하기</h2>
+    <p class="lead">앱 설치 없이 휴대폰·태블릿·컴퓨터의 인터넷 브라우저에서 바로 씁니다.</p>
+    <ol class="steps">
+      <li><strong>앱 열기</strong> — 맨 위 <span class="ui">🎵 앱 바로가기</span>를 누르거나 <code>raon-music-sheet.vercel.app</code> 에 접속합니다.</li>
+      <li><strong>회원가입</strong> — 처음이라면 <span class="ui">계정이 없어요 → 회원가입</span>을 누르고 이메일과 비밀번호(6자 이상)를 입력합니다.</li>
+      <li><strong>로그인</strong> — 이미 가입했다면 이메일과 비밀번호를 넣고 <span class="ui">로그인</span>을 누릅니다.</li>
+    </ol>
+    <div class="tip"><b>비밀번호 보기</b> — 비밀번호 칸 오른쪽의 <span class="ui">보기</span>를 누르면 입력한 글자를 확인할 수 있습니다. 휴대폰에서 오타가 잦을 때 유용합니다. 다른 사람 앞에서는 <span class="ui">숨기기</span>로 바꿔 두세요.</div>
+    <div class="tip"><b>휴대폰 홈 화면에 두기</b> — 아이폰은 Safari의 공유 버튼 → <span class="ui">홈 화면에 추가</span>, 안드로이드는 Chrome 메뉴 → <span class="ui">홈 화면에 추가</span>를 누르면 앱처럼 바로 열 수 있습니다.</div>
+  </section>
+
+  <!-- 2. 화면 구성 -->
+  <section id="layout">
+    <h2>🧭 화면 구성</h2>
+    <p class="lead">로그인하면 맨 위에 <strong>작업 공간</strong> 선택 칸이 있고, 그 아래 다섯 개의 탭이 있습니다.</p>
+    <div class="cards">
+      <div class="card"><b>🎵 곡 목록</b><p>곡을 추가·수정하고, 검색·정렬·즐겨찾기로 찾습니다.</p></div>
+      <div class="card"><b>📋 콘티</b><p>예배 콘티를 만들고 곡을 고르고 순서를 정합니다. 공유 링크도 여기서 만듭니다.</p></div>
+      <div class="card"><b>👥 팀</b><p>팀을 만들거나 초대 코드로 참여합니다. 팀장은 팀원 관리도 합니다.</p></div>
+      <div class="card"><b>🎸 연습 도구</b><p>메트로놈·튜너·카포 계산기·스케일표</p></div>
+      <div class="card"><b>📖 사용법</b><p>앱 안의 간단한 도움말</p></div>
+      <div class="card"><b>⚙️ 오른쪽 위</b><p><span class="ui">비밀번호 변경</span> · <span class="ui">로그아웃</span></p></div>
+    </div>
+  </section>
+
+  <!-- 3. 작업 공간 -->
+  <section id="workspace">
+    <h2>🗂️ 작업 공간 (개인 / 팀)</h2>
+    <p class="lead">곡과 콘티는 <strong>어느 공간에 있느냐</strong>에 따라 누가 볼 수 있는지가 정해집니다.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>작업 공간</th><th>누가 보나요</th><th>언제 쓰나요</th></tr></thead>
+        <tbody>
+          <tr><td><strong>내 개인 공간</strong></td><td>나만</td><td>개인 연습용 곡, 아직 팀에 공개하기 전의 콘티</td></tr>
+          <tr><td><strong>팀: (팀 이름)</strong></td><td>그 팀의 팀원 모두</td><td>주일 예배 콘티, 찬양팀이 함께 쓰는 곡</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ol class="steps">
+      <li>화면 맨 위 <span class="ui">작업 공간</span>에서 <span class="ui">내 개인 공간</span> 또는 <span class="ui">팀: 라온 찬양팀</span> 처럼 원하는 공간을 고릅니다.</li>
+      <li>고른 공간의 곡과 콘티만 보이고, 새로 만드는 곡·콘티도 그 공간에 저장됩니다.</li>
+      <li>마지막에 고른 공간은 다음에 들어와도 그대로 열립니다.</li>
+    </ol>
+    <div class="tip"><b>찬양팀 곡은 꼭 팀 공간에!</b> 팀원과 함께 쓸 곡을 개인 공간에 넣으면 다른 팀원에게 보이지 않습니다. 곡을 추가하기 전에 맨 위 작업 공간이 팀으로 되어 있는지 확인하세요.</div>
+  </section>
+
+  <!-- 4. 곡 목록 -->
+  <section id="songs">
+    <h2>🎵 곡 목록 · 곡 추가</h2>
+    <h3>곡 추가하기</h3>
+    <ol class="steps">
+      <li><span class="ui">곡 목록</span> 탭에서 <strong>곡 제목</strong>(필수)과 <strong>아티스트/원곡자</strong>를 입력합니다.</li>
+      <li><span class="ui">키 선택</span>(C, D, Em …), <span class="ui">BPM</span>, <span class="ui">카포</span>를 고릅니다.</li>
+      <li><span class="ui">▼ 링크·악보 펼치기</span>를 누르면 아래 칸이 나옵니다.
+        <ul>
+          <li><strong>YouTube URL</strong> — 예배곡 영상 주소</li>
+          <li><strong>MR / 반주 URL</strong></li>
+          <li><strong>악보 이미지 URL</strong> · <strong>악보 PDF URL</strong> — 인터넷에 올라가 있는 악보 파일의 주소</li>
+          <li><strong>송폼 구조</strong> — 예: Intro - Verse - Chorus - Bridge</li>
+          <li><strong>메모</strong> — 연주 포인트, 전조 등</li>
+        </ul>
+      </li>
+      <li><span class="ui">곡 저장</span>을 누릅니다.</li>
+    </ol>
+    <div class="tip"><b>악보 찾기</b> — 곡 제목을 입력하고 제목 칸 옆 <span class="ui">🔍 구글</span>을 누르면 "곡 제목 악보"로 구글 검색이 바로 열립니다.</div>
+    <div class="warn">악보는 파일을 직접 올리는 방식이 아니라 <strong>인터넷 주소(URL)를 붙여 넣는 방식</strong>입니다. 악보 이미지는 브라우저 주소창에 넣었을 때 그림이 바로 열리는 주소여야 합니다.</div>
+
+    <h3>곡 찾기 · 보기 · 고치기</h3>
+    <ul>
+      <li><strong>검색</strong> — <span class="ui">제목·아티스트·코드 검색</span> 칸에 일부만 입력해도 찾아 줍니다. 예: <code>손경민</code>, <code>Em</code></li>
+      <li><strong>정렬</strong> — 등록순 · 제목순 · 아티스트순 · 코드순 · BPM순</li>
+      <li><span class="ui">보기</span> — 악보·영상·MR·송폼·메모를 한 화면에서 봅니다.</li>
+      <li><span class="ui">수정</span> — 곡 정보를 고칩니다. 팀 곡은 팀원 누구나 고칠 수 있습니다.</li>
+      <li><span class="ui">삭제</span> — 개인 곡은 본인이, <strong>팀 곡은 팀장만</strong> 지울 수 있습니다. 팀원에게는 팀 곡의 삭제 버튼이 보이지 않습니다.</li>
+      <li>팀 공간에서는 곡마다 <strong>등록: 이메일</strong>이 표시되어 누가 올린 곡인지 알 수 있습니다.</li>
+    </ul>
+  </section>
+
+  <!-- 5. 즐겨찾기 -->
+  <section id="favorites">
+    <h2>⭐ 즐겨찾기</h2>
+    <p class="lead">자주 부르는 곡, 내가 맡은 곡을 <strong>나만의 목록</strong>으로 따로 모아 둘 수 있습니다.</p>
+    <ol class="steps">
+      <li>곡 제목 왼쪽의 <span class="ui">☆</span>를 누르면 <span class="ui">★</span>(노란 별)로 바뀌며 즐겨찾기에 들어갑니다. 다시 누르면 빠집니다.</li>
+      <li><span class="ui">★ 즐겨찾기만</span> 버튼을 누르면 별 표시한 곡만 보입니다.</li>
+      <li>콘티에서 곡을 고를 때도 <span class="ui">★ 즐겨찾기만</span>으로 바로 골라 담을 수 있습니다.</li>
+    </ol>
+    <div class="tip"><b>나만 보입니다</b> — 즐겨찾기는 사람마다 따로 저장됩니다. 팀 곡에 별을 달아도 다른 팀원 화면에는 표시되지 않고, 어느 기기에서 로그인해도 그대로 남아 있습니다.</div>
+  </section>
+
+  <!-- 6. 콘티 -->
+  <section id="conti">
+    <h2>📋 콘티 만들기</h2>
+    <ol class="steps">
+      <li>맨 위 작업 공간이 <strong>팀</strong>으로 되어 있는지 확인합니다. (팀원과 함께 볼 콘티라면)</li>
+      <li><span class="ui">콘티</span> 탭에서 콘티 이름을 입력하고 <span class="ui">콘티 저장</span>을 누릅니다. 예: <code>11월 1주 주일예배</code></li>
+      <li>왼쪽 <strong>콘티 목록</strong>에서 콘티를 누르면 오른쪽에 상세 화면이 열립니다.</li>
+      <li>아래 <strong>곡 추가</strong>에서 곡을 체크하고 <span class="ui">선택한 곡 추가</span>를 누릅니다. (<a href="#picker">곡 고르기</a> 참고)</li>
+      <li><strong>순서 바꾸기</strong> — 콘티 순서의 곡을 마우스로 끌어 놓으면 순서가 바뀌고 바로 저장됩니다.</li>
+    </ol>
+    <h3>콘티 화면의 기능</h3>
+    <ul>
+      <li><span class="ui">💬 카톡 요약</span> — 곡 순서·아티스트·Key·BPM·송폼(공유 링크가 있으면 링크까지)을 카카오톡에 붙여 넣기 좋은 글로 복사합니다.</li>
+      <li><span class="ui">🔗 공유 링크</span> — 로그인 없이 볼 수 있는 링크를 만듭니다. (<a href="#share">공유 링크</a> 참고)</li>
+      <li><span class="ui">▶ 연속재생</span> — 콘티의 유튜브 영상을 차례로 이어서 재생합니다. 연습할 때 편합니다.</li>
+      <li><strong>연습 완료 체크</strong> — 곡마다 체크해 두면 "연습 완료 3 / 5곡"처럼 진행 상황이 보이고, 다 하면 🎉가 나옵니다. 체크는 <em>지금 쓰는 기기에만</em> 저장됩니다.</li>
+      <li><span class="ui">‹ 이전</span> · <span class="ui">다음 ›</span> — 공유 링크를 연 팀원들의 화면을 한 곡씩 넘깁니다. (예배 인도용)</li>
+      <li>콘티에서 곡 빼기, 콘티 삭제도 할 수 있습니다. 팀 콘티는 만든 사람이나 팀장이 지울 수 있습니다.</li>
+    </ul>
+  </section>
+
+  <!-- 7. 곡 고르기 -->
+  <section id="picker">
+    <h2>🔎 콘티에 곡 고르기</h2>
+    <p class="lead">콘티 상세 화면 아래 <strong>곡 추가</strong>에서 여러 곡을 한 번에 골라 담습니다.</p>
+    <ul>
+      <li><strong>검색</strong> — <span class="ui">제목·아티스트·코드 검색</span></li>
+      <li><strong>정렬</strong> — <span class="ui">코드순</span> · <span class="ui">제목순</span> · <span class="ui">아티스트순</span></li>
+      <li><strong>코드별로 보기</strong> — 코드순일 때 위에 <span class="ui">전체</span> <span class="ui">C 1</span> <span class="ui">D 3</span> <span class="ui">E 2</span> … 버튼이 나옵니다. 숫자는 그 코드의 곡 수입니다. 누르면 그 코드의 곡만 보이고, 다시 누르면 전체로 돌아갑니다. 코드가 없는 곡은 <span class="ui">코드 없음</span>에 모입니다.</li>
+      <li><strong>보기 방식</strong> — <span class="ui">목록</span>(한 줄씩 촘촘하게) / <span class="ui">카드</span>(제목·아티스트·Key·BPM을 크게). 마지막에 고른 방식이 기억됩니다.</li>
+      <li><strong>칸 배치</strong> — 컴퓨터에서는 3줄로 나란히, 태블릿은 2줄, 휴대폰은 목록 1줄 · 카드 2줄로 화면에 맞춰 바뀝니다.</li>
+      <li><span class="ui">★ 즐겨찾기만</span> — 내가 별 표시한 곡만 보입니다. 곡 이름 옆 ☆를 눌러 여기서 바로 즐겨찾기할 수도 있습니다.</li>
+      <li>여러 곡을 체크하면 버튼에 <span class="ui">선택한 곡 추가 (3)</span>처럼 개수가 표시됩니다.</li>
+    </ul>
+    <div class="tip"><b>같은 공간의 곡만</b> — 팀 콘티에는 팀 곡만, 개인 콘티에는 내 개인 곡만 담을 수 있습니다. 이미 콘티에 들어 있는 곡은 목록에 나오지 않습니다.</div>
+  </section>
+
+  <!-- 8. 공유 -->
+  <section id="share">
+    <h2>🔗 공유 링크 · 예배 중 악보 넘기기</h2>
+    <h3>링크 만들고 보내기</h3>
+    <ol class="steps">
+      <li>콘티 상세 화면에서 <span class="ui">🔗 공유 링크</span>를 누르면 링크가 만들어집니다. <span class="ui">복사</span>로 복사합니다.</li>
+      <li>악보 화면으로 바로 열리는 링크가 필요하면 <strong>악보만</strong> 링크를 복사합니다.</li>
+      <li>카카오톡·문자로 팀원에게 보냅니다. 받은 사람은 <strong>로그인 없이</strong> 바로 볼 수 있습니다.</li>
+    </ol>
+    <h3>공유 화면 쓰는 법</h3>
+    <ul>
+      <li><span class="ui">📋 전체 보기</span> — 곡 목록, 악보, 유튜브, MR, PDF, 메모가 모두 보이는 화면</li>
+      <li><span class="ui">📄 악보만</span> — 악보만 크게 보여 주는 무대용 화면</li>
+      <li><strong>곡 넘기기</strong> — 화살표 버튼을 누르거나, 휴대폰·태블릿에서는 악보를 <strong>좌우로 밀어서</strong> 넘깁니다.</li>
+      <li><span class="ui">맞춤</span> · <span class="ui">−</span> · <span class="ui">+</span> — 악보 전체를 화면에 맞추거나 확대·축소합니다.</li>
+      <li><span class="ui">⊞ 목록</span> — 여러 장 악보를 한눈에 보고 원하는 장으로 이동합니다.</li>
+      <li><span class="ui">🎧 MR 열기</span> · <span class="ui">📄 PDF 열기</span> — 반주와 PDF 악보를 엽니다.</li>
+    </ul>
+    <h3>실시간 동기화 (인도자가 넘기면 모두 함께)</h3>
+    <ul>
+      <li>화면에 <span class="ui">🔴 실시간 동기화 중</span>이 보이면, 한 사람이 곡을 넘길 때 같은 링크를 연 모든 사람의 화면이 <strong>3초 안에</strong> 함께 넘어갑니다.</li>
+      <li>예배 전에 팀원 모두 같은 링크에 들어와 첫 곡이 맞게 보이는지 한 번 확인하세요.</li>
+    </ul>
+    <div class="warn">공유 링크를 가진 사람은 누구나 곡을 넘길 수 있습니다. 예배 중에는 인도자만 넘기도록 미리 약속하고, 링크는 팀원에게만 보내 주세요.</div>
+  </section>
+
+  <!-- 9. 팀 -->
+  <section id="team">
+    <h2>👥 팀 만들기 · 초대</h2>
+    <h3>팀장이 할 일</h3>
+    <ol class="steps">
+      <li><span class="ui">팀</span> 탭에서 팀 이름을 입력하고 <span class="ui">팀 만들기</span>를 누릅니다. 만든 사람이 <strong>팀장</strong>이 됩니다.</li>
+      <li>팀 옆의 <span class="ui">초대코드: XXXXXXXX</span>를 누르면 복사됩니다. 팀원에게 보내 주세요.</li>
+      <li>이미 개인 공간에 곡·콘티를 많이 만들어 두었다면 <span class="ui">내 곡·콘티를 이 팀으로 옮기기</span>를 누르세요. 한 번에 팀 공간으로 옮겨져 팀원 모두가 보게 됩니다.</li>
+    </ol>
+    <h3>팀원이 할 일</h3>
+    <ol class="steps">
+      <li>회원가입·로그인 후 <span class="ui">팀</span> 탭의 <span class="ui">초대 코드 입력</span> 칸에 받은 코드를 넣고 <span class="ui">팀 참여</span>를 누릅니다.</li>
+      <li>맨 위 작업 공간에서 <span class="ui">팀: (팀 이름)</span>을 고르면 팀의 곡과 콘티가 보입니다.</li>
+    </ol>
+    <h3>팀 관리</h3>
+    <ul>
+      <li>팀장의 팀 탭에는 <strong>팀원 목록</strong>이 보입니다.</li>
+      <li>팀원이 비밀번호를 잊었다면 팀원 옆 <span class="ui">비밀번호 초기화</span>를 누릅니다. <code>raon-xxxx-xxxx-xxxx</code> 형태의 <strong>임시 비밀번호</strong>가 한 번만 나오니 팀원에게 직접 알려 주세요. (<a href="#account">비밀번호</a> 참고)</li>
+      <li>팀원은 <span class="ui">나가기</span>로 팀을 떠날 수 있습니다. 팀원이 올린 팀 곡은 팀에 그대로 남습니다.</li>
+      <li>팀장은 <span class="ui">팀 삭제</span>를 할 수 있습니다. 팀을 지워도 곡·콘티는 지워지지 않고 각자 만든 사람의 개인 공간으로 돌아갑니다.</li>
+    </ul>
+  </section>
+
+  <!-- 10. 권한 -->
+  <section id="roles">
+    <h2>🔐 누가 무엇을 할 수 있나요</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>할 일</th><th>팀장</th><th>팀원</th><th>링크만 받은 사람</th></tr></thead>
+        <tbody>
+          <tr><td>팀 곡·콘티 보기</td><td class="y">○</td><td class="y">○</td><td class="n">공유된 콘티만</td></tr>
+          <tr><td>팀 곡 추가 · 수정</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
+          <tr><td>팀 곡 삭제</td><td class="y">○</td><td class="n">✕</td><td class="n">✕</td></tr>
+          <tr><td>팀 콘티 만들기 · 곡 담기 · 순서 바꾸기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
+          <tr><td>팀 콘티 삭제</td><td class="y">○</td><td class="n">내가 만든 것만</td><td class="n">✕</td></tr>
+          <tr><td>공유 화면에서 곡 넘기기</td><td class="y">○</td><td class="y">○</td><td class="y">○</td></tr>
+          <tr><td>팀원 비밀번호 초기화</td><td class="y">○</td><td class="n">✕</td><td class="n">✕</td></tr>
+          <tr><td>팀 삭제</td><td class="y">○</td><td class="n">✕ (나가기만)</td><td class="n">✕</td></tr>
+          <tr><td>즐겨찾기 ★</td><td class="y">나만의 목록</td><td class="y">나만의 목록</td><td class="n">✕</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>개인 공간의 곡·콘티는 언제나 <strong>본인만</strong> 보고, 고치고, 지울 수 있습니다.</p>
+  </section>
+
+  <!-- 11. 연습 도구 -->
+  <section id="tools">
+    <h2>🎸 연습 도구</h2>
+    <p class="lead">설치 없이 브라우저에서 바로 씁니다. <span class="ui">연습 도구</span> 탭을 누르세요.</p>
+    <div class="cards">
+      <div class="card"><b>🥁 메트로놈</b><p>BPM을 정하고 <span class="ui">▶ 시작</span>. 박자(4/4 · 3/4 · 6/8 · 2/4)를 고를 수 있고, <span class="ui">탭</span>을 여러 번 누르면 그 빠르기로 BPM을 자동으로 잽니다.</p></div>
+      <div class="card"><b>🎸 크로매틱 튜너</b><p><span class="ui">🎤 시작</span>을 누르고 마이크 사용을 허락하면 음 이름과 높낮이(▲ 올려야 / ▼ 내려야 / ✓ 정확)를 알려 줍니다.</p></div>
+      <div class="card"><b>🎸 카포 계산기</b><p>악보 Key와 카포 위치를 고르면 실제로 나는 소리의 Key를 계산하고, 카포 위치별 Key 목록도 보여 줍니다.</p></div>
+      <div class="card"><b>🎸 스케일표</b><p>기타 6현 · 베이스 4현 지판에 장음계·단음계·펜타토닉·블루스·도리안·믹솔리디안 구성음을 표시합니다.</p></div>
+    </div>
+  </section>
+
+  <!-- 12. 계정 -->
+  <section id="account">
+    <h2>🔑 비밀번호 · 계정</h2>
+    <h3>비밀번호 바꾸기</h3>
+    <ol class="steps">
+      <li>오른쪽 위 <span class="ui">비밀번호 변경</span>을 누릅니다.</li>
+      <li>현재 비밀번호, 새 비밀번호(6자 이상), 새 비밀번호 확인을 입력하고 <span class="ui">변경</span>을 누릅니다.</li>
+    </ol>
+    <h3>비밀번호를 잊었을 때</h3>
+    <ol class="steps">
+      <li><strong>팀장에게 초기화를 요청</strong>합니다. 팀장이 팀 탭에서 <span class="ui">비밀번호 초기화</span>를 누르면 임시 비밀번호가 나옵니다.</li>
+      <li>팀장에게 받은 임시 비밀번호로 로그인하면 <strong>비밀번호 변경 창이 자동으로 열립니다.</strong> 현재 비밀번호 칸에 임시 비밀번호를, 새 비밀번호 칸에 앞으로 쓸 비밀번호를 넣고 바꿉니다.</li>
+      <li>비밀번호를 바꾸기 전에는 다른 기능을 쓸 수 없고, 임시 비밀번호는 <strong>24시간 뒤 만료</strong>됩니다. 만료되었다면 팀장에게 다시 요청하세요.</li>
+    </ol>
+    <div class="warn">비밀번호(임시 비밀번호 포함)를 단체 대화방이나 화면 캡처로 공유하지 마세요. 꼭 본인에게만 직접 전달해 주세요.</div>
+  </section>
+
+  <!-- 13. FAQ -->
+  <section id="faq">
+    <h2>❓ 자주 묻는 질문 · 문제 해결</h2>
+    <details>
+      <summary>팀원이 내가 올린 곡을 못 본다고 해요</summary>
+      <p>맨 위 작업 공간이 <strong>내 개인 공간</strong>일 때 올린 곡은 나만 보입니다. 팀 탭의 <span class="ui">내 곡·콘티를 이 팀으로 옮기기</span>를 누르거나, 작업 공간을 팀으로 바꾼 뒤 다시 추가하세요. 팀원도 작업 공간을 팀으로 골라야 보입니다.</p>
+    </details>
+    <details>
+      <summary>"Invalid credentials"가 떠요</summary>
+      <p>이메일 또는 비밀번호가 맞지 않는다는 뜻입니다. <span class="ui">보기</span>를 눌러 비밀번호를 확인하고, 휴대폰에서 첫 글자가 대문자로 바뀌지 않았는지 보세요. 그래도 안 되면 팀장에게 비밀번호 초기화를 요청하세요.</p>
+    </details>
+    <details>
+      <summary>새 기능이 안 보이거나 화면이 이상해요</summary>
+      <p>예전 화면이 브라우저에 남아 있는 경우입니다. 컴퓨터는 <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>(윈도우는 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>), 휴대폰은 브라우저를 닫았다가 다시 열어 주세요.</p>
+    </details>
+    <details>
+      <summary>악보가 보이지 않아요</summary>
+      <ul>
+        <li>곡의 <strong>악보 이미지 URL</strong>이 브라우저 주소창에서 그림으로 바로 열리는지 확인하세요. 웹페이지 주소가 아니라 이미지 파일 주소여야 합니다.</li>
+        <li>콘티에 곡이 저장되었는지 확인하세요.</li>
+        <li>PDF 악보는 <span class="ui">📄 PDF 열기</span>로 엽니다.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>삭제 버튼이 안 보여요</summary>
+      <p>팀 곡은 팀장만 지울 수 있어서 팀원에게는 삭제 버튼이 보이지 않습니다. 지워야 할 곡이 있으면 팀장에게 말씀해 주세요.</p>
+    </details>
+    <details>
+      <summary>예배 중에 화면이 같이 안 넘어가요</summary>
+      <p>모두 <strong>같은 공유 링크</strong>를 열었는지, 화면에 <span class="ui">🔴 실시간 동기화 중</span>이 보이는지 확인하세요. 넘긴 뒤 최대 3초 정도 걸릴 수 있습니다. 인터넷이 약하면 늦어질 수 있으니 예배 전에 한 번 맞춰 보세요.</p>
+    </details>
+    <details>
+      <summary>찾는 곡이 목록에 없어요</summary>
+      <p>곡 목록은 <strong>하루 30곡씩</strong> 업데이트될 예정입니다. 바로 필요하면 <a href="#songs">곡 추가</a> 방법대로 직접 등록하세요(팀과 함께 쓸 곡은 팀 공간에).</p>
+    </details>
+  </section>
+
+  <footer class="meta">
+    RAON music sheet · 라온동행교회 찬양팀 · 2026년 10월 27일 기준 안내서
+    <br><button class="theme-toggle" type="button" id="themeToggle">🌓 화면 밝기 바꾸기</button>
+    · <a href="#top">맨 위로 ↑</a>
+  </footer>
+</main>
+
+<!-- 맨 아래 바로가기 -->
+<div class="shortcut">
+  <div class="wrap">
+    <div>
+      <strong>준비되셨나요?</strong><br>
+      <span>이제 앱에서 이번 주 콘티를 만들어 보세요.</span>
+    </div>
+    <a class="go-btn" href="https://raon-music-sheet.vercel.app" target="_blank" rel="noopener">🎵 앱 바로가기 →</a>
+  </div>
+</div>
+
+<script>
+  // 밝은/어두운 화면 전환 (선택은 이 기기에만 기억)
+  (function () {
+    var root = document.documentElement
+    try { var saved = localStorage.getItem('guideTheme'); if (saved) root.setAttribute('data-theme', saved) } catch (e) {}
+    document.getElementById('themeToggle').addEventListener('click', function () {
+      var dark = root.getAttribute('data-theme')
+        ? root.getAttribute('data-theme') === 'dark'
+        : window.matchMedia('(prefers-color-scheme: dark)').matches
+      var next = dark ? 'light' : 'dark'
+      root.setAttribute('data-theme', next)
+      try { localStorage.setItem('guideTheme', next) } catch (e) {}
+    })
+  })()
+</script>
+</body>
+</html>
