@@ -218,6 +218,7 @@
         <h3>곡</h3>
         <ul>
           <li><a href="#songs">곡 목록 · 곡 추가</a></li>
+          <li><a href="#sheets">Key별 악보 · 여러 장 · PDF</a></li>
           <li><a href="#classify">곡 분류 · 주제 · 상세 검색</a></li>
           <li><a href="#favorites">즐겨찾기 ★</a></li>
         </ul>
@@ -226,6 +227,8 @@
         <h3>콘티 · 예배 준비</h3>
         <ul>
           <li><a href="#conti">콘티 만들기 · 콘티 점검</a></li>
+          <li><a href="#ready">예배 준비 점검</a></li>
+          <li><a href="#confirm">콘티 확정 · 수정 이력</a></li>
           <li><a href="#order">예배 순서 · 시간 계산</a></li>
           <li><a href="#templates">예배 종류 · 템플릿</a></li>
           <li><a href="#picker">콘티에 곡 고르기</a></li>
@@ -235,7 +238,7 @@
       <div class="toc-group">
         <h3>예배 중</h3>
         <ul>
-          <li><a href="#share">공유 링크 · 악보 넘기기</a></li>
+          <li><a href="#share">공유 링크 · 인도자 따라가기</a></li>
           <li><a href="#annotate">악보 위 필기 공유</a></li>
           <li><a href="#offline">앱 설치 · 오프라인 악보</a></li>
         </ul>
@@ -333,8 +336,7 @@
         <ul>
           <li><strong>YouTube URL</strong> — 예배곡 영상 주소</li>
           <li><strong>MR / 반주 URL</strong></li>
-          <li><strong>악보 이미지</strong> — <span class="ui">📷 악보 사진 올리기</span>를 누르면 휴대폰으로 바로 찍거나 앨범에서 고를 수 있습니다. 사진은 교회 구글 드라이브 폴더에 저장되고 주소가 자동으로 채워집니다. 인터넷에 있는 악보 이미지 주소를 직접 붙여 넣어도 됩니다.</li>
-          <li><strong>악보 PDF URL</strong> — 인터넷에 올라가 있는 PDF 악보의 주소</li>
+          <li><strong>악보</strong> — <span class="ui">악보에 적힌 Key</span>를 고르고 <span class="ui">📷 사진·PDF 올리기</span>로 사진 여러 장이나 PDF를 올리거나, <span class="ui">🔗 주소로 쪽 추가</span>로 인터넷 주소를 넣습니다. Key가 다른 악보는 <span class="ui">+ 새 악보 추가</span>로 따로 넣습니다. (<a href="#sheets">Key별 악보 · 여러 장 · PDF</a>)</li>
           <li><strong>송폼 구조</strong> — 예: Intro - Verse - Chorus - Bridge</li>
           <li><strong>메모</strong> — 연주 포인트, 전조 등</li>
         </ul>
@@ -342,9 +344,39 @@
       <li><span class="ui">곡 저장</span>을 누릅니다.</li>
     </ol>
     <div class="tip"><b>악보 찾기</b> — 곡 제목을 입력하고 제목 칸 옆 <span class="ui">🔍 구글</span>을 누르면 "곡 제목 악보"로 구글 검색이 바로 열립니다.</div>
-    <div class="tip"><b>사진 올리기 팁</b> — 큰 휴대폰 사진은 자동으로 알맞은 크기로 줄여서 올립니다. 사진을 올린 뒤 꼭 <span class="ui">곡 저장</span>(수정 중이면 저장)을 눌러야 반영됩니다. 이미 다른 사진이 있으면 새 사진으로 바뀝니다.</div>
+    <div class="tip"><b>사진 올리기 팁</b> — 큰 휴대폰 사진은 자동으로 알맞은 크기로 줄여서 올립니다. 올린 뒤 꼭 <span class="ui">곡 저장</span>(수정 중이면 저장)을 눌러야 반영됩니다.</div>
     <div class="warn"><strong>교회가 사용 권한을 가진 악보만</strong> 올려 주세요. 출판사·저작권자의 허락 범위를 넘는 악보를 올리면 안 됩니다. (<a href="#copyright">저작권 안내</a>)</div>
-    <div class="tip"><b>PDF 악보·인터넷 이미지</b> — PDF는 파일을 올리는 대신 주소(URL)를 넣습니다. 이미지 주소는 브라우저 주소창에 넣었을 때 그림이 바로 열리는 주소여야 합니다.</div>
+    <div class="tip"><b>인터넷 주소로 넣을 때</b> — 브라우저 주소창에 넣었을 때 그림이나 PDF 파일이 바로 열리는 주소여야 합니다. 다른 사이트의 PDF는 그 사이트가 막으면 앱 안에서 열리지 않으니, 가능하면 PDF 파일을 직접 올려 주세요.</div>
+  </section>
+
+  <!-- Key별 악보 -->
+  <section id="sheets">
+    <h2>🎼 Key별 악보 · 여러 장 악보 · PDF</h2>
+    <p class="lead">한 곡에 <strong>Key마다 다른 악보</strong>를 넣어 두면, 콘티에서 Key를 고를 때 그 Key 악보가 자동으로 연결됩니다. 한 악보에는 사진 여러 장이나 여러 쪽짜리 PDF를 넣을 수 있습니다.</p>
+    <h3>악보 넣기 (곡 추가 · 수정 → ▼ 링크·악보 펼치기)</h3>
+    <ol class="steps">
+      <li><span class="ui">악보에 적힌 Key</span>를 고릅니다. <strong>악보 그림에 실제로 적힌 Key</strong>입니다. 모르면 <em>미확인</em>으로 둡니다.</li>
+      <li><span class="ui">📷 사진·PDF 올리기 (쪽 추가)</span>로 사진 여러 장이나 PDF를 한 번에 올립니다. PDF는 <strong>3MB까지</strong> 올릴 수 있고, 사진은 자동으로 줄여서 올립니다.</li>
+      <li>쪽 순서는 <span class="ui">▲</span> <span class="ui">▼</span>로 바꾸고, <span class="ui">빼기</span>로 한 쪽만 뺍니다.</li>
+      <li>Key가 다른 악보(예: 남자키)는 <span class="ui">+ 새 악보 추가 (다른 Key·다른 판)</span>로 하나 더 만듭니다. 이름 칸에 <code>남자키</code>처럼 적어 두면 구분하기 쉽습니다.</li>
+      <li><span class="ui">곡 저장</span>을 누릅니다.</li>
+    </ol>
+    <ul>
+      <li><strong>새 악보 추가 vs 교체</strong> — <span class="ui">+ 새 악보 추가</span>는 다른 Key·다른 판 악보를 <em>하나 더</em> 만드는 것이고, 쪽 옆 <span class="ui">교체</span>는 <em>그 쪽만</em> 새 파일로 바꾸는 것입니다. 교체한 쪽에는 예전 필기가 보이지 않습니다(다른 그림에 엉뚱하게 겹치지 않도록).</li>
+      <li><strong>예전에 넣은 악보</strong>는 그대로 보이며 <span class="ui">악보 Key 미확인</span>으로 표시됩니다. 곡을 고쳐 악보에 적힌 Key만 골라 주면 됩니다. 예전 필기도 그대로 남습니다.</li>
+      <li>곡 목록에는 <span class="ui">악보 C·D</span>처럼 등록된 악보의 Key가 보입니다(<span class="ui">Key?</span> = 미확인).</li>
+    </ul>
+    <h3>콘티에서 Key와 악보 고르기</h3>
+    <ol class="steps">
+      <li>콘티의 곡 옆 <span class="ui">Key·악보·메모</span>를 누릅니다.</li>
+      <li><span class="ui">이번에 부를 Key</span>를 고르면 <strong>그 Key로 된 악보가 자동으로</strong> 연결됩니다. 직접 고르려면 <span class="ui">쓸 악보</span>에서 고릅니다.</li>
+      <li>맞는 악보가 없으면 <strong>"이번 Key는 D, 등록 악보는 C입니다"</strong>처럼 차이를 알려 줍니다. 곡 줄에는 <span class="ui">⚠ 악보 C · 이번 D</span>가 붙습니다.</li>
+    </ol>
+    <div class="warn"><strong>Key를 바꾸는 것 ≠ 악보 조옮김</strong> — Key를 바꾸면 <em>부를 Key 이름</em>만 바뀝니다. 악보 사진·PDF 내용은 자동으로 조옮김되지 않습니다. 다른 Key 악보가 필요하면 그 Key 악보를 따로 넣어 주세요.</div>
+    <ul>
+      <li>고른 악보는 <strong>공유 화면 · 인쇄 · 오프라인 저장</strong>에 똑같이 쓰입니다.</li>
+      <li>PDF 악보는 앱 안에서 쪽마다 넘겨 볼 수 있습니다. 다른 사이트의 PDF가 막혀 있으면 이유와 함께 <span class="ui">새 창에서 열기</span>가 나옵니다.</li>
+    </ul>
 
     <h3>곡 수 확인하기</h3>
     <ul>
@@ -446,18 +478,59 @@
     <ul>
       <li><strong>예배 날짜 · 시작 시각 · 예배 종류 바꾸기</strong> — 콘티 이름 아래 칸을 바꾸면 바로 저장됩니다.</li>
       <li><span class="ui">복제</span> — 지금 콘티를 그대로 복사해 새 콘티를 만듭니다. 예배 순서·예배 종류·곡 순서와 콘티별 Key·메모까지 복사되고, 날짜는 <strong>원래 날짜 + 7일</strong>(날짜가 없으면 다가오는 주일)로 정해집니다. 지난주 콘티를 고쳐 쓸 때 편합니다.</li>
-      <li><span class="ui">Key·메모</span> — 곡 옆 버튼을 누르면 <strong>이 콘티에서만</strong> 쓸 Key와 메모를 정할 수 있습니다. 곡 목록의 원래 정보는 바뀌지 않습니다. 바꾼 Key는 <span class="ui">D ← C</span>처럼(이번 Key ← 원래 Key) 표시되고, 카톡 요약·공유 화면·인쇄에 모두 반영됩니다. <span class="ui">원래대로</span>를 누르면 되돌립니다.</li>
+      <li><span class="ui">Key·악보·메모</span> — 곡 옆 버튼을 누르면 <strong>이 콘티에서만</strong> 쓸 Key·악보·메모를 정할 수 있습니다. 곡 목록의 원래 정보는 바뀌지 않습니다. 바꾼 Key는 <span class="ui">D ← C</span>처럼(이번 Key ← 원래 Key) 표시되고, 카톡 요약·공유 화면·인쇄에 모두 반영됩니다. <span class="ui">원래대로</span>를 누르면 되돌립니다. (<a href="#sheets">Key와 악보</a>)</li>
       <li><span class="ui">인쇄·PDF</span> — 콘티 악보를 종이에 인쇄하거나 PDF 파일로 저장합니다. (<a href="#print">인쇄 · PDF 저장</a>)</li>
       <li><span class="ui">카톡 요약</span> — 예배 날짜, 곡 순서·아티스트·Key(콘티별 Key 반영)·BPM·송폼·메모(공유 링크가 있으면 링크까지)를 카카오톡에 붙여 넣기 좋은 글로 복사합니다. 예배 순서를 짠 콘티는 <strong>시각과 기도·말씀 등 순서</strong>까지 함께 복사됩니다.</li>
       <li><span class="ui">공유 링크</span> — 로그인 없이 볼 수 있는 링크를 만듭니다. (<a href="#share">공유 링크</a> 참고)</li>
-      <li><span class="ui">악보 오프라인 저장</span> — 이 콘티의 악보 사진을 지금 쓰는 기기에 저장해 둡니다. 예배당 인터넷이 약해도 공유 화면에서 악보를 볼 수 있습니다. (<a href="#offline">오프라인 악보</a>)</li>
+      <li><span class="ui">악보 오프라인 저장</span> — 이번 Key로 고른 악보(여러 장·PDF 포함)를 지금 쓰는 기기에 저장해 둡니다. 저장 결과는 <a href="#ready">예배 준비 점검</a>에 보입니다. (<a href="#offline">오프라인 악보</a>)</li>
       <li><span class="ui">템플릿으로 저장</span> — 이 콘티의 예배 순서를 템플릿으로 저장합니다. (<a href="#templates">템플릿</a>)</li>
       <li><strong>팀원 배정</strong> — 팀 콘티 아래에서 인도·싱어·건반·드럼 등 역할과 팀원을 골라 <span class="ui">배정</span>합니다. (<a href="#teamnews">팀원 배정</a>)</li>
       <li><span class="ui">연속재생</span> — 콘티의 유튜브 영상을 차례로 이어서 재생합니다. 연습할 때 편합니다.</li>
-      <li><strong>연습 완료 체크</strong> — 곡마다 체크해 두면 "연습 완료 3 / 5곡"처럼 진행 상황이 보이고, 다 하면 🎉가 나옵니다. 체크는 <em>지금 쓰는 기기에만</em> 저장됩니다.</li>
-      <li><span class="ui">‹ 이전</span> · <span class="ui">다음 ›</span> — 공유 링크를 연 팀원들의 화면을 한 곡씩 넘깁니다. (예배 인도용)</li>
+      <li><strong>연습 완료 체크</strong> — 곡마다 체크해 두면 "내 연습 완료 3 / 5곡"처럼 보이고, 다 하면 🎉가 나옵니다. 체크는 <strong>내 계정</strong>에 저장되어 다른 기기에서도 이어집니다. 연습한 뒤 악보·Key·송폼·메모가 바뀌면 체크가 <span class="ui">↻</span>(변경 후 재확인 필요)로 바뀝니다. 예전에 기기에만 저장된 체크가 있으면 <em>본인 것이 맞는지</em> 물어본 뒤에만 옮깁니다.</li>
+      <li><strong>실시간 진행</strong> — 공유 링크를 만든 콘티에 보입니다. 팀장이나 이 콘티의 <strong>인도</strong> 배정자가 <span class="ui">진행 시작</span>을 누르고 <span class="ui">‹</span> <span class="ui">›</span>로 넘기면 ‘인도자 따라가기’ 중인 화면이 모두 넘어갑니다. 다른 팀원에게는 지금 누가 몇 번 곡을 진행 중인지만 보입니다. (<a href="#share">인도자 따라가기</a>)</li>
       <li>콘티에서 곡 빼기, 콘티 삭제도 할 수 있습니다. 팀 콘티는 만든 사람이나 팀장이 지울 수 있습니다.</li>
     </ul>
+  </section>
+
+  <!-- 예배 준비 점검 -->
+  <section id="ready">
+    <h2>✅ 예배 준비 점검</h2>
+    <p class="lead">콘티 화면 위쪽의 <strong>예배 준비 점검</strong> 상자에서 이번 예배 준비 상태를 한눈에 봅니다. ✓ 준비됨 · ! 확인 필요 · ✕ 문제 있음으로 표시됩니다.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>항목</th><th>보여 주는 것</th></tr></thead>
+        <tbody>
+          <tr><td><strong>악보</strong></td><td>악보가 없는 곡</td></tr>
+          <tr><td><strong>콘티 Key와 악보 Key</strong></td><td>"이번 Key는 D, 등록 악보는 C입니다" 같은 불일치, 악보 Key 미확인 곡</td></tr>
+          <tr><td><strong>이 기기 오프라인 저장</strong></td><td>"이 기기에서 악보 5/5곡 저장 완료"처럼 <strong>지금 기기</strong> 기준. 일부만 저장 · 저장 실패 · 콘티가 바뀌어 다시 저장 필요를 구분합니다. 저장 버튼을 눌렀는지가 아니라 <strong>실제로 기기에 저장돼 있는지</strong>를 확인합니다.</td></tr>
+          <tr><td><strong>실시간 동기화</strong></td><td>인터넷이 끊기면 "실시간 동기화가 멈췄습니다"</td></tr>
+          <tr><td><strong>팀원 배정</strong> (팀)</td><td>수락 · 대기 · 거절 수와 아직 수락하지 않은 사람</td></tr>
+          <tr><td><strong>연습 완료</strong></td><td>내 연습 현황, 팀 콘티면 팀원별 "3/5 (재확인 1)"</td></tr>
+          <tr><td><strong>변경 확인</strong> (팀 · 확정)</td><td>최신 판을 확인한 팀원 수</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>개인 공간의 콘티에는 팀원 배정 · 팀원별 연습 · 변경 확인이 나오지 않습니다.</p>
+  </section>
+
+  <!-- 확정 · 수정 이력 -->
+  <section id="confirm">
+    <h2>📌 콘티 확정 · 수정 이력 · 변경 확인</h2>
+    <p class="lead">팀원이 서로 다른 내용으로 연습하지 않도록, 콘티를 <strong>작성 중 → 확정</strong>으로 정하고 바뀐 내용을 기록합니다.</p>
+    <ol class="steps">
+      <li>콘티 위쪽에 <span class="ui">작성 중</span> 또는 <span class="ui">확정</span>이 보입니다. 공유 화면 맨 위에도 같은 표시가 나옵니다.</li>
+      <li><strong>팀장이나 이 콘티의 인도 배정자</strong>가 <span class="ui">콘티 확정</span>을 누릅니다. <span class="ui">확정 해제</span>도 같은 사람만 할 수 있습니다. (개인 콘티는 본인)</li>
+      <li>확정된 콘티를 고치면 먼저 확인을 묻고, 고친 내용은 <strong>확정 후 변경</strong>으로 기록됩니다. 화면에 "확정 후 2번 변경"처럼 보이고, 인도자는 <span class="ui">다시 확정</span>할 수 있습니다.</li>
+      <li>팀원 화면에는 <strong>"확정된 콘티를 확인해 주세요"</strong>와 함께 바뀐 내용이 나옵니다. 읽은 뒤 <span class="ui">변경 확인</span>을 누릅니다. 그 뒤에 또 바뀌면 다시 확인을 요청합니다.</li>
+    </ol>
+    <h3>수정 이력 · 이전 판 복원</h3>
+    <ul>
+      <li><span class="ui">수정 이력 (n판)</span>을 누르면 누가 · 언제 · 무엇을 바꿨는지 나옵니다. 예: <em>2번 곡 ‘은혜’ Key C → D</em>, <em>‘주님의 은혜’ 추가 (3번 곡)</em>, <em>곡 순서 변경</em>, <em>예배 순서 ‘대표기도’ 추가</em></li>
+      <li>팀 확정 콘티는 <strong>팀원별 변경 확인</strong>(최신 판 확인 / n판 확인 / 아직 확인 안 함)도 함께 보입니다.</li>
+      <li><span class="ui">이 판으로 되돌리기</span> — 곡·곡 순서·콘티 Key·메모·악보 선택·예배 순서·예배 종류·시작 시각을 그 판으로 되돌립니다. <strong>콘티 이름·날짜, 확정 상태, 공유 링크·비밀번호, 팀원 배정, 필기, 연습 기록은 그대로</strong>입니다. 되돌린 것도 새 판으로 남아 다시 되돌릴 수 있습니다.</li>
+      <li>이력은 이 기능이 생긴 뒤에 고친 것부터 남습니다. 처음 고칠 때 그 전 상태가 <em>기록 시작 전</em> 판으로 함께 남습니다.</li>
+    </ul>
+    <div class="tip"><b>두 사람이 동시에 고치면</b> — 다른 사람이 먼저 고친 콘티를 저장하려 하면 덮어쓰지 않고 <strong>"다른 사람이 먼저 콘티를 고쳤습니다"</strong>와 바뀐 내용을 보여 준 뒤 최신 내용을 다시 불러옵니다. 확인하고 다시 고쳐 주세요.</div>
   </section>
 
   <!-- 예배 순서 -->
@@ -521,7 +594,7 @@
       <li>위쪽에서 고릅니다.
         <ul>
           <li><strong>용지</strong> — A4 세로 · A4 가로 · Letter 세로</li>
-          <li><strong>한 장에</strong> — A4 세로·Letter: 1 / 2 / 4곡, A4 가로: 1 / 2 / 3곡</li>
+          <li><strong>한 장에</strong> — A4 세로·Letter: 1 / 2 / 4쪽, A4 가로: 1 / 2 / 3쪽 (여러 장 악보는 쪽마다 한 칸)</li>
           <li><strong>첫 장에 곡 순서</strong> — 첫 장 맨 위에 곡 순서·Key·BPM 목록을 넣습니다. 예배 순서를 짠 콘티는 <strong>첫 장에 예배 순서</strong>로 바뀌어 시각·종류·이름·시간과 총 예배 시간이 표로 들어갑니다.</li>
         </ul>
         고른 설정은 다음에도 기억됩니다.</li>
@@ -530,7 +603,8 @@
     </ol>
     <ul>
       <li>각 장 맨 위에는 예배 날짜·콘티 이름과 쪽 번호가, 곡마다 번호·제목·Key(콘티별 Key 반영)와 메모가 표시됩니다.</li>
-      <li>악보 이미지가 없는 곡은 "악보 이미지 없음"으로 표시되고, PDF 악보가 있으면 그 주소가 함께 적힙니다.</li>
+      <li>공유 화면과 같은 악보(이번 Key로 고른 악보)를 인쇄합니다. 여러 장 악보와 <strong>PDF 악보도 쪽마다</strong> 인쇄되고, 쪽에는 "(2/3)"처럼 쪽 번호가 붙습니다. Key가 다르면 "이번 Key는 D, 등록 악보는 C입니다"가 함께 적힙니다.</li>
+      <li>악보가 없는 곡은 "악보 없음"으로, 열 수 없는 PDF는 이유와 주소가 표시됩니다.</li>
       <li>모든 장 아래에 <strong>저작권 안내 문구</strong>가 함께 인쇄됩니다.</li>
     </ul>
     <div class="warn">악보 인쇄·PDF는 복제에 해당합니다. 교회가 가진 사용 권한 범위 안에서만 쓰고, 단체 대화방·인터넷에 올리지 마세요.</div>
@@ -552,7 +626,7 @@
       <li><span class="ui">바꾸기</span>로 새 비밀번호를, <span class="ui">해제</span>로 비밀번호 없이 되돌릴 수 있습니다.</li>
       <li>한 기기에서 비밀번호를 <strong>5번 틀리면 그 기기만 15분 동안 잠깁니다.</strong> 다른 팀원의 휴대폰은 영향을 받지 않습니다. (여러 기기에서 합쳐 30번 넘게 틀리면 링크 전체가 잠기고, 반복될 때마다 잠금 시간이 15분 → 30분 → 1시간…으로 늘어납니다. 최대 24시간입니다.) 급하면 콘티 화면에서 비밀번호를 새로 걸면 잠금이 바로 풀립니다.</li>
     </ol>
-    <div class="tip"><b>링크와 비밀번호는 따로</b> — 링크와 비밀번호를 같은 메시지에 보내면 효과가 줄어듭니다. 비밀번호는 팀원에게 따로 알려 주세요. 로그인한 팀원은 앱의 콘티 화면에서 비밀번호 없이 곡을 넘길 수 있습니다.</div>
+    <div class="tip"><b>링크와 비밀번호는 따로</b> — 링크와 비밀번호를 같은 메시지에 보내면 효과가 줄어듭니다. 비밀번호는 팀원에게 따로 알려 주세요.</div>
     <h3>공유 화면 쓰는 법</h3>
     <ul>
       <li><span class="ui">📋 전체 보기</span> — 곡 목록, 악보, 유튜브, MR, PDF, 메모가 모두 보이는 화면</li>
@@ -560,18 +634,32 @@
       <li><span class="ui">무대 모드</span> — 화면 전체를 <strong>검은 바탕</strong>으로 바꿔 어두운 예배당에서 눈부시지 않게 합니다. 악보도 검은 바탕·밝은 선으로 보입니다. <span class="ui">밝게</span>를 누르면 돌아오고, 고른 모드는 그 기기에 기억됩니다.</li>
       <li><span class="ui">예배 순서</span> — 예배 순서를 짠 콘티에서 보입니다. 시각과 함께 전체 순서를 보여 주고, 찬양을 누르면 그 곡으로 이동합니다.</li>
       <li><strong>악보 위 필기</strong> — 로그인한 팀원은 악보에 펜·형광펜으로 표시할 수 있고, 다른 사람 화면에도 보입니다. (<a href="#annotate">필기 공유</a>)</li>
-      <li><strong>곡 넘기기</strong> — 화살표 버튼을 누르거나, 휴대폰·태블릿에서는 악보를 <strong>좌우로 밀어서</strong> 넘깁니다.</li>
+      <li><strong>곡 이동과 쪽 이동</strong> — 곡 목록·하단 곡 버튼·<span class="ui">⏮ 곡</span> <span class="ui">곡 ⏭</span>는 <em>곡</em>을, <span class="ui">‹ 이전 쪽</span> <span class="ui">다음 쪽 ›</span>은 <em>곡 안의 쪽</em>을 넘깁니다. 화면에 "곡 2/5 · 1/3쪽"처럼 지금 위치가 보입니다. 악보를 <strong>좌우로 밀거나 양옆을 누르면</strong> 남은 쪽을 먼저 넘기고, 마지막 쪽에서 다음 곡으로 넘어갑니다.</li>
+      <li><strong>Key 알림</strong> — 콘티 Key와 악보 Key가 다르면 악보 위에 "⚠ Key 다름 · 이번 Key는 D, 등록 악보는 C입니다"가 나옵니다.</li>
       <li><span class="ui">맞춤</span> · <span class="ui">−</span> · <span class="ui">+</span> — 악보 전체를 화면에 맞추거나 확대·축소합니다.</li>
-      <li><span class="ui">⊞ 목록</span> — 여러 장 악보를 한눈에 보고 원하는 장으로 이동합니다.</li>
-      <li><span class="ui">🎧 MR 열기</span> · <span class="ui">📄 PDF 열기</span> — 반주와 PDF 악보를 엽니다.</li>
+      <li><span class="ui">⊞ 목록</span> — 콘티의 곡을 한눈에 보고 원하는 곡으로 이동합니다. 인도자가 진행 중인 곡에는 <em>● 인도자</em>가 붙습니다.</li>
+      <li><strong>PDF 악보</strong>는 앱 안에서 쪽마다 넘겨 봅니다. <span class="ui">PDF 원본 열기</span>로 새 창에서도 열 수 있습니다. <span class="ui">🎧 MR 열기</span>로 반주를 엽니다.</li>
       <li>화면 위에는 예배 날짜와 콘티 이름이, 맨 아래에는 저작권 안내가 표시됩니다. 콘티별 Key·메모도 그대로 보입니다.</li>
     </ul>
-    <h3>실시간 동기화 (인도자가 넘기면 모두 함께)</h3>
+    <h3>인도자 따라가기 · 혼자 보기</h3>
+    <p>공유 화면 위 막대에서 보기 방식과 연결 상태를 확인합니다.</p>
     <ul>
-      <li>화면에 <span class="ui">🔴 실시간 동기화 중</span>이 보이면, 한 사람이 곡을 넘길 때 같은 링크를 연 모든 사람의 화면이 <strong>3초 안에</strong> 함께 넘어갑니다.</li>
-      <li>예배 전에 팀원 모두 같은 링크에 들어와 첫 곡이 맞게 보이는지 한 번 확인하세요.</li>
+      <li><span class="ui">인도자 따라가기</span> — 인도자가 곡을 넘기면 내 화면도 <strong>3초 안에</strong> 함께 넘어갑니다. 처음 열면 이 방식입니다.</li>
+      <li><span class="ui">혼자 보기</span> — 내 화면에서만 곡을 넘겨 봅니다. 다른 사람 화면은 바뀌지 않습니다. 따라가는 중에 내가 곡을 넘기면 자동으로 혼자 보기로 바뀌고, 막대에 "인도자는 3번 곡"처럼 인도자 위치가 보입니다. <span class="ui">인도자 따라가기</span>를 누르면 인도자의 곡으로 돌아갑니다.</li>
+      <li>곡 안의 <strong>쪽 넘기기</strong>는 각자 화면에서만 하며, 따라가기가 풀리지 않습니다.</li>
     </ul>
-    <div class="warn">공유 링크(비밀번호를 걸었다면 비밀번호까지)를 아는 사람은 누구나 곡을 넘길 수 있습니다. 예배 중에는 인도자만 넘기도록 미리 약속하고, 링크는 팀원에게만 보내 주세요.</div>
+    <h3>인도자가 진행하기</h3>
+    <ol class="steps">
+      <li>진행할 수 있는 사람은 <strong>팀장</strong>과 이 콘티에 <strong>‘인도’로 배정된 팀원</strong>(거절하지 않은 경우)입니다. 개인 콘티는 만든 본인입니다. (<a href="#teamnews">팀원 배정</a>)</li>
+      <li>앱에 로그인한 기기에서 공유 링크를 열고 <span class="ui">내가 진행하기</span>를 누릅니다. (앱의 콘티 화면 <strong>실시간 진행</strong> 상자의 <span class="ui">진행 시작</span>도 같습니다)</li>
+      <li>막대에 <em>🎤 내가 진행 중</em>이 보이면, 곡을 넘길 때마다 따라가는 모든 화면이 넘어갑니다. 끝나면 <span class="ui">진행 끝내기</span>를 누릅니다.</li>
+      <li>다른 인도자가 진행 중이면 <span class="ui">진행 넘겨받기</span>를 눌러 바꿀 수 있습니다. 진행자가 바뀌면 다른 화면에 "진행자가 바뀌었습니다"가 나옵니다.</li>
+    </ol>
+    <ul>
+      <li><strong>연결 상태</strong> — 막대에 <em>인도자 따라가는 중</em> · <em>혼자 보는 중</em> · <em>아직 진행 중인 인도자가 없어요</em> · <em>인도자 신호 없음(마지막 위치 유지)</em>이 표시됩니다. 인터넷이 끊기면 <strong>"연결 끊김 · 실시간 동기화가 멈췄습니다"</strong>가 나오고, 다시 연결되면 인도자 위치로 맞춰 줍니다.</li>
+      <li>콘티 내용이 바뀌면 공유 화면이 새 내용으로 저절로 다시 불러옵니다.</li>
+    </ul>
+    <div class="tip"><b>공유 링크만으로는 진행할 수 없습니다</b> — 링크(와 비밀번호)를 받은 사람도 곡을 넘겨 볼 수 있지만 <strong>자기 화면만</strong> 바뀝니다. 모두의 화면을 넘기는 것은 서버에서 진행 권한을 확인합니다.</div>
   </section>
 
   <!-- 필기 -->
@@ -581,14 +669,15 @@
     <ol class="steps">
       <li>앱에 <strong>로그인한 기기</strong>에서 공유 링크를 엽니다. (그 콘티를 볼 수 있는 팀원만 쓸 수 있습니다)</li>
       <li>악보 위 도구 막대에서 <span class="ui">펜</span> 또는 <span class="ui">형광펜</span>과 색을 고르고 악보 위에 그립니다.</li>
-      <li><span class="ui">지우개</span>는 선을 한 줄씩 지우고, <span class="ui">되돌리기</span>는 방금 한 것을 취소, <span class="ui">전체 지우기</span>는 그 곡의 필기를 모두 지웁니다.</li>
+      <li><span class="ui">지우개</span>는 선을 한 줄씩 지우고, <span class="ui">되돌리기</span>는 방금 한 것을 취소, <span class="ui">전체 지우기</span>는 <strong>그 쪽(페이지)</strong>의 필기를 모두 지웁니다.</li>
       <li>다 그렸으면 <span class="ui">보기</span>로 바꿔야 화면을 밀어서 곡을 넘길 수 있습니다.</li>
     </ol>
     <ul>
       <li>그린 내용은 잠시 뒤 자동으로 저장되고(<em>저장됨</em> 표시), 다른 팀원 화면에는 <strong>몇 초 안에</strong> 나타납니다.</li>
       <li>두 사람이 동시에 그려도 서로의 필기가 합쳐집니다. "다른 사람이 수정해서 다시 불러왔어요"가 나오면 최신 필기로 맞춘 것입니다.</li>
       <li>로그인하지 않고 링크만 받은 사람은 필기를 <strong>볼 수만</strong> 있고, <span class="ui">필기 보기 끄기</span>로 숨길 수 있습니다.</li>
-      <li>필기는 <strong>그 콘티의 그 곡</strong>에만 붙습니다. 다른 콘티의 같은 곡에는 보이지 않고, 곡 원본 악보도 바뀌지 않습니다. 콘티를 지우면 필기도 함께 지워집니다.</li>
+      <li>필기는 <strong>그 콘티 · 그 곡 · 그 악보의 그 쪽</strong>에만 붙습니다. 여러 장 악보나 PDF는 쪽마다 따로 그립니다. 다른 콘티의 같은 곡에는 보이지 않고, 곡 원본 악보도 바뀌지 않습니다.</li>
+      <li>곡에서 그 쪽을 <strong>교체하거나 빼면</strong> 그 쪽의 필기는 보이지 않습니다(새 그림에 엉뚱하게 겹치지 않도록). 콘티에서 곡을 뺐다가 다시 넣거나 이전 판으로 되돌리면 필기는 다시 보입니다. 콘티를 지우면 필기도 함께 지워집니다.</li>
     </ul>
   </section>
 
@@ -603,10 +692,13 @@
     </ul>
     <h3>인터넷이 약한 예배당에서</h3>
     <ol class="steps">
-      <li>예배 전 인터넷이 될 때 콘티 상세 화면에서 <span class="ui">악보 오프라인 저장</span>을 누릅니다. "악보 n장을 이 기기에 저장했습니다"가 나오면 끝입니다.</li>
+      <li>예배 전 인터넷이 될 때 콘티 상세 화면에서 <span class="ui">악보 오프라인 저장</span>(또는 준비 점검의 <span class="ui">저장하기</span>)을 누릅니다. 이번 Key로 고른 악보의 모든 쪽(PDF 포함)과 PDF 보기 프로그램을 받아 둡니다.</li>
+      <li><a href="#ready">예배 준비 점검</a>에 <strong>"이 기기에서 악보 5/5곡 저장 완료"</strong>가 나오면 끝입니다. 버튼을 누른 것만으로 완료로 보지 않고, 실제로 기기에 저장됐는지 확인한 결과입니다. "3/5곡만 저장됨"이면 빠진 곡이 함께 나오니 인터넷이 될 때 다시 누르세요.</li>
+      <li>저장한 뒤 콘티나 악보가 바뀌면 <strong>"다시 저장해야 합니다"</strong>로 바뀝니다.</li>
       <li>그 기기에서 한 번 열어 본 공유 링크는 인터넷이 끊겨도 마지막으로 본 내용으로 열립니다.</li>
     </ol>
-    <div class="tip"><b>기기마다 따로</b> — 저장은 누른 기기에만 됩니다. 무대에서 쓸 휴대폰·태블릿에서 각각 눌러 주세요. 인터넷이 끊긴 동안에는 실시간 동기화·필기 저장이 되지 않습니다.</div>
+    <div class="tip"><b>기기마다 따로</b> — 저장은 누른 기기에만 됩니다. 무대에서 쓸 휴대폰·태블릿에서 각각 눌러 주세요. 인터넷이 끊긴 동안에는 실시간 동기화·필기 저장이 되지 않고, 공유 화면에 "실시간 동기화가 멈췄습니다"가 보입니다.</div>
+    <div class="warn"><b>저장할 수 없는 악보</b> — 다른 사이트의 PDF 주소는 이 기기에 저장할 수 없습니다(준비 점검에 "외부 PDF"로 표시). PDF 파일을 앱에서 직접 올려 주세요. 비밀번호가 걸린 콘티는 공유 화면을 그 기기에서 한 번 열어 두어야 곡 순서·Key까지 저장됩니다.</div>
   </section>
 
   <!-- 9. 팀 -->
@@ -672,11 +764,16 @@
           <tr><td>팀 곡 삭제</td><td class="y">○</td><td class="n">✕</td><td class="n">✕</td></tr>
           <tr><td>팀 콘티 만들기 · 곡 담기 · 순서 바꾸기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
           <tr><td>팀 콘티 삭제</td><td class="y">○</td><td class="n">내가 만든 것만</td><td class="n">✕</td></tr>
-          <tr><td>콘티 날짜 · 복제 · 콘티별 Key·메모</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
+          <tr><td>콘티 날짜 · 복제 · 콘티별 Key·악보·메모</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
+          <tr><td>콘티 확정 · 확정 해제</td><td class="y">○</td><td class="n">이 콘티의 인도 배정자만</td><td class="n">✕</td></tr>
+          <tr><td>수정 이력 보기 · 이전 판으로 되돌리기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
+          <tr><td>변경 확인</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
+          <tr><td>연습 완료 표시 (내 계정)</td><td class="y">내 기록</td><td class="y">내 기록</td><td class="n">✕</td></tr>
           <tr><td>인쇄 · PDF 저장</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
-          <tr><td>악보 사진 올리기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
+          <tr><td>악보 사진·PDF 올리기 · Key별 악보 넣기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
           <tr><td>공유 링크 만들기 · 공유 비밀번호 걸기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
-          <tr><td>공유 화면에서 곡 넘기기</td><td class="y">○</td><td class="y">○</td><td class="y">○ (비밀번호가 있으면 비밀번호 필요)</td></tr>
+          <tr><td>공유 화면에서 곡 넘겨 보기 (내 화면만, 혼자 보기)</td><td class="y">○</td><td class="y">○</td><td class="y">○ (비밀번호가 있으면 비밀번호 필요)</td></tr>
+          <tr><td>실시간 진행 (모두의 화면 넘기기)</td><td class="y">○</td><td class="n">이 콘티의 인도 배정자만</td><td class="n">✕</td></tr>
           <tr><td>예배 순서 · 시간 · 예배 종류 정하기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
           <tr><td>템플릿 저장 · 템플릿으로 콘티 만들기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
           <tr><td>템플릿 지우기</td><td class="y">○</td><td class="n">내가 만든 것만</td><td class="n">✕</td></tr>
@@ -786,12 +883,33 @@
       <p>예전 화면이 브라우저에 남아 있는 경우입니다. 컴퓨터는 <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>(윈도우는 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>), 휴대폰은 브라우저를 닫았다가 다시 열어 주세요.</p>
     </details>
     <details>
-      <summary>악보가 보이지 않아요</summary>
+      <summary>악보가 보이지 않아요 · PDF가 안 열려요</summary>
       <ul>
-        <li>곡의 <strong>악보 이미지 URL</strong>이 브라우저 주소창에서 그림으로 바로 열리는지 확인하세요. 웹페이지 주소가 아니라 이미지 파일 주소여야 합니다.</li>
+        <li>악보 자리에 <strong>"악보를 열 수 없습니다"</strong>와 이유가 나옵니다. <span class="ui">새 창에서 열기</span>로 주소가 열리는지 확인하세요.</li>
+        <li>인터넷 주소로 넣은 악보는 브라우저 주소창에서 그림·PDF 파일이 바로 열리는 주소여야 합니다. 다른 사이트의 PDF는 그 사이트가 막으면 앱 안에서 열리지 않으니, 파일을 내려받아 <span class="ui">📷 사진·PDF 올리기</span>로 직접 올려 주세요.</li>
+        <li>PDF 파일이 3MB보다 크면 올릴 수 없습니다. 페이지를 나눠 올리거나 사진으로 올려 주세요.</li>
         <li>콘티에 곡이 저장되었는지 확인하세요.</li>
-        <li>PDF 악보는 <span class="ui">📄 PDF 열기</span>로 엽니다.</li>
       </ul>
+    </details>
+    <details>
+      <summary>인도자가 넘기는데 내 화면이 따라가지 않아요</summary>
+      <p>공유 화면 위 막대를 보세요. <em>혼자 보는 중</em>이면 <span class="ui">인도자 따라가기</span>를 누르세요. <em>연결 끊김</em>이면 인터넷이 다시 연결될 때 저절로 맞춰집니다. <em>아직 진행 중인 인도자가 없어요</em>면 인도자가 <span class="ui">내가 진행하기</span>를 눌러야 합니다.</p>
+    </details>
+    <details>
+      <summary>곡을 넘기려는데 "진행 권한이 없습니다"가 떠요</summary>
+      <p>모두의 화면을 넘기는 진행은 <strong>팀장</strong>과 이 콘티에 <strong>‘인도’로 배정된 팀원</strong>만 할 수 있습니다. 팀장에게 팀원 배정에서 ‘인도’로 넣어 달라고 하세요. 내 화면에서만 넘겨 보는 것은 누구나 할 수 있습니다(혼자 보기).</p>
+    </details>
+    <details>
+      <summary>"이번 Key는 D, 등록 악보는 C입니다"가 나와요</summary>
+      <p>콘티에서 부를 Key와 등록된 악보의 Key가 다르다는 뜻입니다. 악보 그림은 조옮김되지 않으니, D 악보를 곡에 추가하거나(<a href="#sheets">Key별 악보</a>) 연주할 때 Key를 바꿔 주세요. <em>악보 Key 미확인</em>은 악보에 적힌 Key를 아직 정하지 않은 것이니 곡을 고쳐 Key를 골라 주세요.</p>
+    </details>
+    <details>
+      <summary>"다른 사람이 먼저 콘티를 고쳤습니다"가 떠요</summary>
+      <p>내가 화면을 보는 사이 다른 팀원이 콘티를 고친 경우입니다. 내 변경은 저장되지 않았고, 최신 내용이 다시 불러와져 있습니다. 바뀐 내용을 확인한 뒤 필요한 부분만 다시 고쳐 주세요. (<a href="#confirm">수정 이력</a>)</p>
+    </details>
+    <details>
+      <summary>연습 완료 체크가 ↻로 바뀌었어요</summary>
+      <p>연습한 뒤 그 곡의 악보 · Key · 송폼 · 콘티 메모가 바뀐 것입니다. 바뀐 내용으로 다시 연습하고 한 번 더 누르면 완료로 돌아옵니다.</p>
     </details>
     <details>
       <summary>삭제 버튼이 안 보여요</summary>
