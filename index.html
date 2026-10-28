@@ -222,8 +222,8 @@
     <h2>🧭 화면 구성</h2>
     <p class="lead">로그인하면 맨 위에 <strong>작업 공간</strong> 선택 칸이 있고, 그 아래 다섯 개의 탭이 있습니다.</p>
     <div class="cards">
-      <div class="card"><b>🎵 곡 목록</b><p>곡을 추가·수정하고, 검색·정렬·즐겨찾기로 찾습니다.</p></div>
-      <div class="card"><b>📋 콘티</b><p>예배 콘티를 만들고 곡을 고르고 순서를 정합니다. 공유 링크도 여기서 만듭니다.</p></div>
+      <div class="card"><b>🎵 곡 목록</b><p>곡을 추가·수정하고, 검색·정렬·즐겨찾기로 찾습니다. 탭에 곡 수가 표시됩니다.</p></div>
+      <div class="card"><b>📋 콘티</b><p>탭에 콘티 수가 표시됩니다. 예배 콘티를 만들고 곡을 고르고 순서를 정합니다. 공유 링크도 여기서 만듭니다.</p></div>
       <div class="card"><b>👥 팀</b><p>팀을 만들거나 초대 코드로 참여합니다. 팀장은 팀원 관리도 합니다.</p></div>
       <div class="card"><b>🎸 연습 도구</b><p>메트로놈·튜너·카포 계산기·스케일표</p></div>
       <div class="card"><b>📖 사용법</b><p>앱 안의 간단한 도움말</p></div>
@@ -276,6 +276,14 @@
     <div class="warn"><strong>교회가 사용 권한을 가진 악보만</strong> 올려 주세요. 출판사·저작권자의 허락 범위를 넘는 악보를 올리면 안 됩니다. (<a href="#copyright">저작권 안내</a>)</div>
     <div class="tip"><b>PDF 악보·인터넷 이미지</b> — PDF는 파일을 올리는 대신 주소(URL)를 넣습니다. 이미지 주소는 브라우저 주소창에 넣었을 때 그림이 바로 열리는 주소여야 합니다.</div>
 
+    <h3>곡 수 확인하기</h3>
+    <ul>
+      <li>맨 위 탭에 <span class="ui">곡 목록 128</span> · <span class="ui">콘티 12</span>처럼 지금 작업 공간의 곡 수와 콘티 수가 보입니다.</li>
+      <li>곡 목록 제목 옆에 <span class="ui">총 128곡</span>이 보이고, 검색하거나 걸러 보면 <strong>지금 보이는 곡 n곡</strong>이 함께 나옵니다.</li>
+      <li><strong>Key별 곡 수</strong> — 목록 위의 <span class="ui">전체 128</span> <span class="ui">C 12</span> <span class="ui">D 30</span> … <span class="ui">코드 없음 5</span> 버튼에 Key마다 곡 수가 적혀 있습니다. 누르면 그 Key의 곡만 보이고, 다시 누르면 전체로 돌아갑니다.</li>
+      <li><span class="ui">★ 즐겨찾기 (7)</span> 버튼에는 별 표시한 곡 수가 나옵니다. 검색어나 즐겨찾기를 켜면 Key별 숫자도 그 조건에 맞춰 바뀝니다.</li>
+    </ul>
+
     <h3>곡 찾기 · 보기 · 고치기</h3>
     <ul>
       <li><strong>검색</strong> — <span class="ui">제목·아티스트·코드 검색</span> 칸에 일부만 입력해도 찾아 줍니다. 예: <code>손경민</code>, <code>Em</code></li>
@@ -301,7 +309,7 @@
     <p class="lead">자주 부르는 곡, 내가 맡은 곡을 <strong>나만의 목록</strong>으로 따로 모아 둘 수 있습니다.</p>
     <ol class="steps">
       <li>곡 제목 왼쪽의 <span class="ui">☆</span>를 누르면 <span class="ui">★</span>(노란 별)로 바뀌며 즐겨찾기에 들어갑니다. 다시 누르면 빠집니다.</li>
-      <li><span class="ui">★ 즐겨찾기만</span> 버튼을 누르면 별 표시한 곡만 보입니다.</li>
+      <li><span class="ui">★ 즐겨찾기 (n)</span> 버튼을 누르면 별 표시한 곡만 보입니다. 괄호 안 숫자가 즐겨찾기한 곡 수입니다.</li>
       <li>콘티에서 곡을 고를 때도 <span class="ui">★ 즐겨찾기만</span>으로 바로 골라 담을 수 있습니다.</li>
     </ol>
     <div class="tip"><b>나만 보입니다</b> — 즐겨찾기는 사람마다 따로 저장됩니다. 팀 곡에 별을 달아도 다른 팀원 화면에는 표시되지 않고, 어느 기기에서 로그인해도 그대로 남아 있습니다.</div>
@@ -578,7 +586,7 @@
   </section>
 
   <footer class="meta">
-    RAON music sheet · 라온동행교회 찬양팀 · 2026년 10월 27일 기준 안내서
+    RAON music sheet · 라온동행교회 찬양팀 · 2026년 10월 28일 기준 안내서
     <br><button class="theme-toggle" type="button" id="themeToggle">🌓 화면 밝기 바꾸기</button>
     · <a href="#top">맨 위로 ↑</a>
   </footer>
