@@ -190,12 +190,18 @@
       <li><a href="#layout">화면 구성</a></li>
       <li><a href="#workspace">작업 공간 (개인 / 팀)</a></li>
       <li><a href="#songs">곡 목록 · 곡 추가</a></li>
+      <li><a href="#classify">곡 분류 · 상세 검색 · 부른 횟수</a></li>
       <li><a href="#favorites">즐겨찾기 ★</a></li>
-      <li><a href="#conti">콘티 만들기</a></li>
+      <li><a href="#conti">콘티 만들기 · 콘티 점검</a></li>
+      <li><a href="#order">예배 순서 · 시간 계산</a></li>
+      <li><a href="#templates">예배 종류 · 템플릿</a></li>
       <li><a href="#picker">콘티에 곡 고르기</a></li>
       <li><a href="#print">인쇄 · PDF 저장</a></li>
       <li><a href="#share">공유 링크 · 예배 중 악보 넘기기</a></li>
+      <li><a href="#annotate">악보 위 필기 공유</a></li>
+      <li><a href="#offline">앱으로 설치 · 오프라인 악보</a></li>
       <li><a href="#team">팀 만들기 · 초대</a></li>
+      <li><a href="#teamnews">팀 소식 · 배정 · 기도제목 · 출석</a></li>
       <li><a href="#roles">누가 무엇을 할 수 있나요</a></li>
       <li><a href="#tools">연습 도구</a></li>
       <li><a href="#account">비밀번호 · 계정 · 이메일 찾기</a></li>
@@ -214,20 +220,21 @@
       <li><strong>로그인</strong> — 이미 가입했다면 이메일과 비밀번호를 넣고 <span class="ui">로그인</span>을 누릅니다.</li>
     </ol>
     <div class="tip"><b>비밀번호 보기</b> — 비밀번호 칸 오른쪽의 <span class="ui">보기</span>를 누르면 입력한 글자를 확인할 수 있습니다. 휴대폰에서 오타가 잦을 때 유용합니다. 다른 사람 앞에서는 <span class="ui">숨기기</span>로 바꿔 두세요.</div>
-    <div class="tip"><b>휴대폰 홈 화면에 두기</b> — 아이폰은 Safari의 공유 버튼 → <span class="ui">홈 화면에 추가</span>, 안드로이드는 Chrome 메뉴 → <span class="ui">홈 화면에 추가</span>를 누르면 앱처럼 바로 열 수 있습니다.</div>
+    <div class="tip"><b>휴대폰 홈 화면에 두기</b> — 오른쪽 위 <span class="ui">앱으로 설치</span>를 누르면 휴대폰에 앱처럼 설치됩니다. 아이폰은 Safari의 공유 버튼 → <span class="ui">홈 화면에 추가</span>를 누르세요. (<a href="#offline">앱으로 설치</a> 참고)</div>
   </section>
 
   <!-- 2. 화면 구성 -->
   <section id="layout">
     <h2>🧭 화면 구성</h2>
-    <p class="lead">로그인하면 맨 위에 <strong>작업 공간</strong> 선택 칸이 있고, 그 아래 다섯 개의 탭이 있습니다.</p>
+    <p class="lead">로그인하면 맨 위에 <strong>작업 공간</strong> 선택 칸이 있고, 메뉴는 <strong>컴퓨터에서는 왼쪽</strong>, <strong>휴대폰·태블릿에서는 화면 맨 아래 탭 막대</strong>에 있습니다. 아이보리 바탕에 짙은 초록·금색을 쓴 차분한 화면입니다.</p>
     <div class="cards">
       <div class="card"><b>🎵 곡 목록</b><p>곡을 추가·수정하고, 검색·정렬·즐겨찾기로 찾습니다. 탭에 곡 수가 표시됩니다.</p></div>
       <div class="card"><b>📋 콘티</b><p>탭에 콘티 수가 표시됩니다. 예배 콘티를 만들고 곡을 고르고 순서를 정합니다. 공유 링크도 여기서 만듭니다.</p></div>
       <div class="card"><b>👥 팀</b><p>팀을 만들거나 초대 코드로 참여합니다. 팀장은 팀원 관리도 합니다.</p></div>
-      <div class="card"><b>🎸 연습 도구</b><p>메트로놈·튜너·카포 계산기·스케일표</p></div>
+      <div class="card"><b>🔔 팀 소식</b><p>내 배정(수락·거절), 못 나오는 날, 공지·기도제목, 출석. 새 소식과 답하지 않은 배정 수가 빨간 숫자로 보입니다.</p></div>
+      <div class="card"><b>🎸 연습 도구</b><p>유튜브 구간 반복·메트로놈·튜너·카포 계산기·스케일표</p></div>
       <div class="card"><b>📖 사용법</b><p>앱 안의 간단한 도움말</p></div>
-      <div class="card"><b>⚙️ 오른쪽 위</b><p><span class="ui">비밀번호 변경</span> · <span class="ui">로그아웃</span></p></div>
+      <div class="card"><b>⚙️ 오른쪽 위</b><p><span class="ui">비밀번호 변경</span> · <span class="ui">앱으로 설치</span> · <span class="ui">로그아웃</span></p></div>
     </div>
   </section>
 
@@ -259,6 +266,7 @@
     <ol class="steps">
       <li><span class="ui">곡 목록</span> 탭에서 <strong>곡 제목</strong>(필수)과 <strong>아티스트/원곡자</strong>를 입력합니다.</li>
       <li><span class="ui">키 선택</span>(C, D, Em …), <span class="ui">BPM</span>, <span class="ui">카포</span>를 고릅니다.</li>
+      <li>(선택) <span class="ui">▼ 분류 (주제·절기·빠르기·대상 등)</span>를 눌러 곡 분류를 넣습니다. (<a href="#classify">곡 분류</a> 참고)</li>
       <li><span class="ui">▼ 링크·악보 펼치기</span>를 누르면 아래 칸이 나옵니다.
         <ul>
           <li><strong>YouTube URL</strong> — 예배곡 영상 주소</li>
@@ -286,13 +294,14 @@
 
     <h3>곡 찾기 · 보기 · 고치기</h3>
     <ul>
-      <li><strong>검색</strong> — <span class="ui">제목·아티스트·코드 검색</span> 칸에 일부만 입력해도 찾아 줍니다. 예: <code>손경민</code>, <code>Em</code></li>
-      <li><strong>정렬</strong> — 등록순 · 제목순 · 아티스트순 · 코드순 · BPM순</li>
+      <li><strong>검색</strong> — <span class="ui">제목·아티스트·코드·태그 검색</span> 칸에 일부만 입력해도 찾아 줍니다. 주제 태그·찬송가 번호·성경구절·작사·작곡도 함께 찾습니다. 예: <code>손경민</code>, <code>Em</code>, <code>부활절</code>, <code>시편 23</code></li>
+      <li><strong>정렬</strong> — 등록순 · 제목순 · 아티스트순 · 코드순 · BPM순 · <strong>많이 부른 순</strong> · <strong>오래 안 부른 순</strong></li>
+      <li><span class="ui">상세 검색 ▼</span> — 빠르기·박자·주제·절기·대상·특성·부른 기록으로 걸러 봅니다. (<a href="#classify">상세 검색</a>)</li>
       <li><span class="ui">보기</span> — 악보·영상·MR·송폼·메모를 한 화면에서 봅니다.</li>
       <li><span class="ui">수정</span> — 곡 정보를 고칩니다. 팀 곡은 팀원 누구나 고칠 수 있습니다.</li>
       <li><span class="ui">삭제</span> — 개인 곡은 본인이, <strong>팀 곡은 팀장만</strong> 지울 수 있습니다. 팀원에게는 팀 곡의 삭제 버튼이 보이지 않습니다.</li>
       <li>팀 공간에서는 곡마다 <strong>등록: 이메일</strong>이 표시되어 누가 올린 곡인지 알 수 있습니다.</li>
-      <li><strong>마지막으로 부른 날</strong> — 날짜가 있는 콘티에 들어간 곡은 "마지막으로 부른 날: 10월 25일 (일)"처럼 표시됩니다. 같은 곡을 너무 자주 부르지 않게 조절할 때 쓰세요.</li>
+      <li><strong>부른 횟수</strong> — 곡마다 "최근 3개월 4회 · 전체 9회 · 마지막 10월 25일 (일)"처럼 표시됩니다. 오늘까지 날짜가 지난 콘티를 기준으로 셉니다. 아직 부른 적 없는 곡은 "아직 부른 기록 없음"으로 나옵니다.</li>
     </ul>
 
     <h3>내보내기 · 백업</h3>
@@ -300,6 +309,32 @@
       <li><span class="ui">⬇ 엑셀</span> — 지금 보이는 곡 목록(검색·정렬·즐겨찾기 조건 그대로)을 엑셀에서 열 수 있는 파일(CSV)로 받습니다.</li>
       <li><span class="ui">⬇ 백업</span> — 지금 작업 공간의 곡과 콘티 전체를 백업 파일(JSON)로 받습니다.</li>
       <li>받은 파일 맨 위에는 저작권 안내 문구가 함께 들어갑니다.</li>
+    </ul>
+  </section>
+
+  <!-- 곡 분류 -->
+  <section id="classify">
+    <h2>🏷️ 곡 분류 · 상세 검색 · 부른 횟수</h2>
+    <p class="lead">곡에 주제·절기·빠르기 같은 분류를 붙여 두면, 예배 주제에 맞는 곡을 빨리 찾고 콘티 점검에도 쓰입니다. 모두 <strong>선택 입력</strong>입니다.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>항목</th><th>넣는 방법</th></tr></thead>
+        <tbody>
+          <tr><td><strong>빠르기</strong></td><td>느림 · 보통 · 빠름. 비워 두면 BPM으로 자동으로 정해집니다(80 미만 느림, 80~110 보통, 110 넘으면 빠름). 직접 고르면 그 값이 우선입니다.</td></tr>
+          <tr><td><strong>박자</strong></td><td>4/4 · 3/4 · 6/8 · 12/8 · 2/4</td></tr>
+          <tr><td><strong>곡 길이(분)</strong></td><td>예배 시간 계산에 씁니다. 비워 두면 4분으로 셉니다.</td></tr>
+          <tr><td><strong>찬양의 대상</strong></td><td>하나님 · 예수님 · 성령님 · 사람에 대한 권면 · 공동체</td></tr>
+          <tr><td><strong>곡 특성</strong></td><td>경배 · 찬양 · 고백 · 선포 · 감사 · 결단 · 회개 · 기도 · 치유·위로 · 축복 · 파송 (여러 개 선택)</td></tr>
+          <tr><td><strong>주제 · 절기</strong></td><td>추천 태그(은혜, 십자가, 부활 … / 대림절, 성탄절, 부활절, 추수감사절 …)를 눌러 고르고, 없는 태그는 칸에 쓰고 Enter</td></tr>
+          <tr><td><strong>찬송가 번호 · 성경구절 · 작사 · 작곡</strong></td><td>글자로 입력 (예: 새찬송가 305장, 시편 23편)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li>곡 목록에서 분류는 <span class="ui">빠름</span> <span class="ui">6/8</span> <span class="ui">#부활절</span>처럼 작은 표시로 보입니다.</li>
+      <li><span class="ui">상세 검색 ▼</span>을 누르면 <strong>빠르기 · 박자 · 주제·절기 · 대상 · 특성 · 부른 기록</strong>을 골라 걸러 볼 수 있습니다. 부른 기록은 <em>아직 안 부른 곡</em> · <em>3개월 넘게 안 부른 곡</em> · <em>최근 3개월에 부른 곡</em> 중에서 고릅니다. <span class="ui">조건 지우기</span>로 한 번에 풀립니다.</li>
+      <li>콘티에서 곡을 고를 때도 같은 상세 검색을 쓸 수 있습니다.</li>
+      <li><strong>우리 교회 많이 부른 곡</strong> — 정렬을 <span class="ui">많이 부른 순</span>으로 바꾸면 최근 3개월 동안 많이 부른 곡부터 나옵니다. <span class="ui">오래 안 부른 순</span>은 부른 지 오래된 곡부터 보여 줍니다.</li>
     </ul>
   </section>
 
@@ -320,23 +355,71 @@
     <h2>📋 콘티 만들기</h2>
     <ol class="steps">
       <li>맨 위 작업 공간이 <strong>팀</strong>으로 되어 있는지 확인합니다. (팀원과 함께 볼 콘티라면)</li>
-      <li><span class="ui">콘티</span> 탭에서 콘티 이름을 입력하고 <strong>예배 날짜</strong>를 고른 뒤 <span class="ui">콘티 저장</span>을 누릅니다. 날짜는 처음부터 <strong>다가오는 주일</strong>로 채워져 있습니다. 예: <code>11월 1주 주일예배</code></li>
-      <li>왼쪽 <strong>콘티 목록</strong>은 <strong>월별</strong>로 묶여 최근 날짜부터 보입니다(날짜 없는 콘티는 맨 아래 "날짜 없음"). 콘티를 누르면 오른쪽에 상세 화면이 열립니다.</li>
+      <li><span class="ui">콘티</span> 탭에서 콘티 이름을 입력하고 <strong>예배 날짜</strong>를 고릅니다. 날짜는 처음부터 <strong>다가오는 주일</strong>로 채워져 있습니다. 예: <code>11월 1주 주일예배</code></li>
+      <li>(선택) <strong>시작 시각</strong>과 <strong>예배 종류</strong>(주일 1부·청년부·수요예배 … 직접 입력 가능)를 넣습니다. 저장해 둔 <strong>템플릿</strong>이 있으면 맨 위에서 골라 매주 같은 순서로 바로 만들 수 있습니다. (<a href="#templates">템플릿</a>)</li>
+      <li><span class="ui">콘티 저장</span>을 누릅니다.</li>
+      <li>왼쪽 <strong>콘티 목록</strong>은 <strong>월별</strong>로 묶여 최근 날짜부터 보입니다(날짜 없는 콘티는 맨 아래 "날짜 없음"). 예배 종류를 넣은 콘티가 있으면 위에 <span class="ui">전체</span> <span class="ui">주일 1부 8</span> <span class="ui">청년부 3</span>처럼 버튼이 생겨 종류별로 걸러 볼 수 있습니다. 콘티를 누르면 오른쪽에 상세 화면이 열립니다.</li>
       <li>아래 <strong>곡 추가</strong>에서 곡을 체크하고 <span class="ui">선택한 곡 추가</span>를 누릅니다. (<a href="#picker">곡 고르기</a> 참고)</li>
-      <li><strong>순서 바꾸기</strong> — 콘티 순서의 곡을 마우스로 끌어 놓으면 순서가 바뀌고 바로 저장됩니다.</li>
+      <li><strong>순서 바꾸기</strong> — 곡을 마우스로 끌어 놓거나, 휴대폰에서는 곡 옆 <span class="ui">▲</span> <span class="ui">▼</span>를 누르면 순서가 바뀌고 바로 저장됩니다.</li>
     </ol>
+    <h3>콘티 점검 (자동)</h3>
+    <p>곡을 담으면 콘티 위에 <strong>콘티 점검</strong> 상자가 나와 이런 경우를 알려 줍니다. <strong>참고용 안내</strong>일 뿐, 그대로 저장해도 됩니다.</p>
+    <ul>
+      <li>처음 부르는 곡이 <strong>2곡 이상</strong> (그 곡에는 <span class="ui">처음 부르는 곡</span> 표시도 붙습니다)</li>
+      <li>Key가 <strong>3종류 이상</strong> (콘티별로 바꾼 Key 기준)</li>
+      <li>서로 다른 <strong>절기</strong> 곡이 섞임 (예: 부활절 + 성탄절)</li>
+      <li>3곡 이상인데 <strong>모두 빠른 곡</strong>이거나 <strong>모두 느린 곡</strong></li>
+      <li>모든 곡이 <strong>"사람에 대한 권면"</strong> 곡</li>
+    </ul>
     <h3>콘티 화면의 기능</h3>
     <ul>
-      <li><strong>예배 날짜 바꾸기</strong> — 콘티 이름 아래 <span class="ui">예배 날짜</span>를 바꾸면 바로 저장됩니다.</li>
-      <li><span class="ui">📄 복제</span> — 지금 콘티를 그대로 복사해 새 콘티를 만듭니다. 곡 순서와 콘티별 Key·메모까지 복사되고, 날짜는 <strong>원래 날짜 + 7일</strong>(날짜가 없으면 다가오는 주일)로 정해집니다. 지난주 콘티를 고쳐 쓸 때 편합니다.</li>
+      <li><strong>예배 날짜 · 시작 시각 · 예배 종류 바꾸기</strong> — 콘티 이름 아래 칸을 바꾸면 바로 저장됩니다.</li>
+      <li><span class="ui">복제</span> — 지금 콘티를 그대로 복사해 새 콘티를 만듭니다. 예배 순서·예배 종류·곡 순서와 콘티별 Key·메모까지 복사되고, 날짜는 <strong>원래 날짜 + 7일</strong>(날짜가 없으면 다가오는 주일)로 정해집니다. 지난주 콘티를 고쳐 쓸 때 편합니다.</li>
       <li><span class="ui">Key·메모</span> — 곡 옆 버튼을 누르면 <strong>이 콘티에서만</strong> 쓸 Key와 메모를 정할 수 있습니다. 곡 목록의 원래 정보는 바뀌지 않습니다. 바꾼 Key는 <span class="ui">D ← C</span>처럼(이번 Key ← 원래 Key) 표시되고, 카톡 요약·공유 화면·인쇄에 모두 반영됩니다. <span class="ui">원래대로</span>를 누르면 되돌립니다.</li>
-      <li><span class="ui">🖨 인쇄·PDF</span> — 콘티 악보를 종이에 인쇄하거나 PDF 파일로 저장합니다. (<a href="#print">인쇄 · PDF 저장</a>)</li>
-      <li><span class="ui">💬 카톡 요약</span> — 예배 날짜, 곡 순서·아티스트·Key(콘티별 Key 반영)·BPM·송폼·메모(공유 링크가 있으면 링크까지)를 카카오톡에 붙여 넣기 좋은 글로 복사합니다.</li>
-      <li><span class="ui">🔗 공유 링크</span> — 로그인 없이 볼 수 있는 링크를 만듭니다. (<a href="#share">공유 링크</a> 참고)</li>
-      <li><span class="ui">▶ 연속재생</span> — 콘티의 유튜브 영상을 차례로 이어서 재생합니다. 연습할 때 편합니다.</li>
+      <li><span class="ui">인쇄·PDF</span> — 콘티 악보를 종이에 인쇄하거나 PDF 파일로 저장합니다. (<a href="#print">인쇄 · PDF 저장</a>)</li>
+      <li><span class="ui">카톡 요약</span> — 예배 날짜, 곡 순서·아티스트·Key(콘티별 Key 반영)·BPM·송폼·메모(공유 링크가 있으면 링크까지)를 카카오톡에 붙여 넣기 좋은 글로 복사합니다. 예배 순서를 짠 콘티는 <strong>시각과 기도·말씀 등 순서</strong>까지 함께 복사됩니다.</li>
+      <li><span class="ui">공유 링크</span> — 로그인 없이 볼 수 있는 링크를 만듭니다. (<a href="#share">공유 링크</a> 참고)</li>
+      <li><span class="ui">악보 오프라인 저장</span> — 이 콘티의 악보 사진을 지금 쓰는 기기에 저장해 둡니다. 예배당 인터넷이 약해도 공유 화면에서 악보를 볼 수 있습니다. (<a href="#offline">오프라인 악보</a>)</li>
+      <li><span class="ui">템플릿으로 저장</span> — 이 콘티의 예배 순서를 템플릿으로 저장합니다. (<a href="#templates">템플릿</a>)</li>
+      <li><strong>팀원 배정</strong> — 팀 콘티 아래에서 인도·싱어·건반·드럼 등 역할과 팀원을 골라 <span class="ui">배정</span>합니다. (<a href="#teamnews">팀원 배정</a>)</li>
+      <li><span class="ui">연속재생</span> — 콘티의 유튜브 영상을 차례로 이어서 재생합니다. 연습할 때 편합니다.</li>
       <li><strong>연습 완료 체크</strong> — 곡마다 체크해 두면 "연습 완료 3 / 5곡"처럼 진행 상황이 보이고, 다 하면 🎉가 나옵니다. 체크는 <em>지금 쓰는 기기에만</em> 저장됩니다.</li>
       <li><span class="ui">‹ 이전</span> · <span class="ui">다음 ›</span> — 공유 링크를 연 팀원들의 화면을 한 곡씩 넘깁니다. (예배 인도용)</li>
       <li>콘티에서 곡 빼기, 콘티 삭제도 할 수 있습니다. 팀 콘티는 만든 사람이나 팀장이 지울 수 있습니다.</li>
+    </ul>
+  </section>
+
+  <!-- 예배 순서 -->
+  <section id="order">
+    <h2>⏱️ 예배 순서 · 시간 계산</h2>
+    <p class="lead">찬양 사이사이에 <strong>기도 · 말씀 · 광고 · 헌금 · 축도</strong> 같은 순서를 넣어 예배 전체 순서표를 만들고, 총 예배 시간을 자동으로 계산합니다.</p>
+    <ol class="steps">
+      <li>콘티 상세 화면의 <strong>예배 순서</strong> 아래 <span class="ui">+ 기도·말씀·광고 등 순서 추가</span>를 누릅니다.</li>
+      <li>종류(기도 · 말씀 · 광고 · 헌금 · 축도 · 찬양 자리 · 기타)를 고르고, 이름(예: <code>대표기도 김OO</code>)과 시간(분)을 넣은 뒤 <span class="ui">맨 뒤에 추가</span>를 누릅니다. 시간을 비우면 종류별 기본 시간(기도 3분, 말씀 30분, 광고 5분 …)으로 셉니다.</li>
+      <li>끌어 놓거나 <span class="ui">▲</span> <span class="ui">▼</span>로 원하는 자리로 옮깁니다. 곡과 순서 항목을 자유롭게 섞어 배치할 수 있습니다.</li>
+      <li>항목의 <span class="ui">수정</span>(곡은 <span class="ui">시간</span>)으로 이름·시간·메모를 고치고, <span class="ui">삭제</span>로 뺍니다.</li>
+    </ol>
+    <ul>
+      <li><strong>색 구분</strong> — 찬양은 초록, 기도는 파랑, 말씀은 자주, 광고는 주황, 헌금은 금색, 축도는 청록 띠로 구분됩니다.</li>
+      <li><strong>시간 계산</strong> — 맨 위에 <span class="ui">총 52분 · 11:00 시작 → 11:52 끝</span>처럼 나오고, 항목마다 시작 시각과 걸리는 시간이 보입니다. 곡 시간은 곡에 넣은 <strong>곡 길이</strong>(없으면 4분)를 쓰고, 콘티에서 따로 정할 수도 있습니다. 시작 시각을 넣지 않으면 총 시간만 나옵니다.</li>
+      <li>공유 화면의 <span class="ui">예배 순서</span>, 인쇄 첫 장, 카톡 요약에 그대로 반영됩니다.</li>
+    </ul>
+  </section>
+
+  <!-- 템플릿 -->
+  <section id="templates">
+    <h2>🗂️ 예배 종류 · 템플릿</h2>
+    <p class="lead">매주 반복되는 예배 순서를 <strong>템플릿</strong>으로 저장해 두면 새 콘티를 같은 순서로 바로 만들 수 있습니다.</p>
+    <ol class="steps">
+      <li>순서를 잘 짜 둔 콘티에서 <span class="ui">템플릿으로 저장</span>을 누르고 이름(예: <code>주일 1부 기본</code>)을 넣습니다.</li>
+      <li>곡은 빠지고 <strong>찬양 자리</strong>로 남습니다. 예배 종류·시작 시각·기도·말씀 등 순서와 시간은 그대로 저장됩니다.</li>
+      <li>다음 주에 <strong>콘티 만들기</strong>에서 <span class="ui">템플릿</span>을 고르면 예배 종류·시작 시각이 채워지고, 순서가 들어간 새 콘티가 만들어집니다.</li>
+      <li>새 콘티에 곡을 추가하면 <strong>비어 있는 찬양 자리부터 차례로</strong> 채워집니다. 자리가 모자라면 맨 뒤에 붙습니다.</li>
+    </ol>
+    <ul>
+      <li>저장한 템플릿은 콘티 만들기 아래 <span class="ui">저장한 템플릿 n개 보기</span>에서 확인하고 <span class="ui">지우기</span>로 지울 수 있습니다. 템플릿을 지워도 그것으로 만든 콘티는 남습니다.</li>
+      <li>팀 공간에서 만든 템플릿은 팀원 모두가 씁니다. 지우기는 만든 사람이나 팀장만 할 수 있습니다.</li>
+      <li><strong>예배 종류</strong>로 콘티 목록을 걸러 볼 수 있습니다. (<a href="#conti">콘티 목록</a>)</li>
     </ul>
   </section>
 
@@ -345,8 +428,10 @@
     <h2>🔎 콘티에 곡 고르기</h2>
     <p class="lead">콘티 상세 화면 아래 <strong>곡 추가</strong>에서 여러 곡을 한 번에 골라 담습니다.</p>
     <ul>
-      <li><strong>검색</strong> — <span class="ui">제목·아티스트·코드 검색</span></li>
+      <li><strong>검색</strong> — <span class="ui">제목·아티스트·코드·태그 검색</span></li>
+      <li><strong>상세 검색</strong> — <span class="ui">상세 검색 ▼</span>으로 빠르기·박자·주제·절기·대상·특성·부른 기록으로 거릅니다. 예: <em>부활절</em> 곡 중 <em>3개월 넘게 안 부른 곡</em></li>
       <li><strong>정렬</strong> — <span class="ui">코드순</span> · <span class="ui">제목순</span> · <span class="ui">아티스트순</span></li>
+      <li>카드 보기에서는 곡마다 "최근 3개월 2회 · 전체 5회"처럼 부른 횟수가 보입니다.</li>
       <li><strong>코드별로 보기</strong> — 코드순일 때 위에 <span class="ui">전체</span> <span class="ui">C 1</span> <span class="ui">D 3</span> <span class="ui">E 2</span> … 버튼이 나옵니다. 숫자는 그 코드의 곡 수입니다. 누르면 그 코드의 곡만 보이고, 다시 누르면 전체로 돌아갑니다. 코드가 없는 곡은 <span class="ui">코드 없음</span>에 모입니다.</li>
       <li><strong>보기 방식</strong> — <span class="ui">목록</span>(한 줄씩 촘촘하게) / <span class="ui">카드</span>(제목·아티스트·Key·BPM을 크게). 마지막에 고른 방식이 기억됩니다.</li>
       <li><strong>칸 배치</strong> — 컴퓨터에서는 3줄로 나란히, 태블릿은 2줄, 휴대폰은 목록 1줄 · 카드 2줄로 화면에 맞춰 바뀝니다.</li>
@@ -361,12 +446,12 @@
     <h2>🖨 인쇄 · PDF 저장</h2>
     <p class="lead">콘티의 악보를 종이 한 장에 여러 곡씩 배치해 인쇄하거나, PDF 파일로 저장해 보관·전송할 수 있습니다.</p>
     <ol class="steps">
-      <li>콘티 상세 화면에서 <span class="ui">🖨 인쇄·PDF</span>를 누릅니다.</li>
+      <li>콘티 상세 화면에서 <span class="ui">인쇄·PDF</span>를 누릅니다.</li>
       <li>위쪽에서 고릅니다.
         <ul>
           <li><strong>용지</strong> — A4 세로 · A4 가로 · Letter 세로</li>
           <li><strong>한 장에</strong> — A4 세로·Letter: 1 / 2 / 4곡, A4 가로: 1 / 2 / 3곡</li>
-          <li><strong>첫 장에 곡 순서</strong> — 첫 장 맨 위에 곡 순서·Key·BPM 목록을 넣습니다.</li>
+          <li><strong>첫 장에 곡 순서</strong> — 첫 장 맨 위에 곡 순서·Key·BPM 목록을 넣습니다. 예배 순서를 짠 콘티는 <strong>첫 장에 예배 순서</strong>로 바뀌어 시각·종류·이름·시간과 총 예배 시간이 표로 들어갑니다.</li>
         </ul>
         고른 설정은 다음에도 기억됩니다.</li>
       <li>아래 미리보기를 확인하고 <span class="ui">인쇄 / PDF로 저장</span>을 누릅니다.</li>
@@ -385,7 +470,7 @@
     <h2>🔗 공유 링크 · 예배 중 악보 넘기기</h2>
     <h3>링크 만들고 보내기</h3>
     <ol class="steps">
-      <li>콘티 상세 화면에서 <span class="ui">🔗 공유 링크</span>를 누르면 링크가 만들어집니다. <span class="ui">복사</span>로 복사합니다.</li>
+      <li>콘티 상세 화면에서 <span class="ui">공유 링크</span>를 누르면 링크가 만들어집니다. <span class="ui">복사</span>로 복사합니다.</li>
       <li>악보 화면으로 바로 열리는 링크가 필요하면 <strong>악보만</strong> 링크를 복사합니다.</li>
       <li>카카오톡·문자로 팀원에게 보냅니다. 받은 사람은 <strong>로그인 없이</strong> 바로 볼 수 있습니다.</li>
     </ol>
@@ -401,6 +486,9 @@
     <ul>
       <li><span class="ui">📋 전체 보기</span> — 곡 목록, 악보, 유튜브, MR, PDF, 메모가 모두 보이는 화면</li>
       <li><span class="ui">📄 악보만</span> — 악보만 크게 보여 주는 무대용 화면</li>
+      <li><span class="ui">무대 모드</span> — 화면 전체를 <strong>검은 바탕</strong>으로 바꿔 어두운 예배당에서 눈부시지 않게 합니다. 악보도 검은 바탕·밝은 선으로 보입니다. <span class="ui">밝게</span>를 누르면 돌아오고, 고른 모드는 그 기기에 기억됩니다.</li>
+      <li><span class="ui">예배 순서</span> — 예배 순서를 짠 콘티에서 보입니다. 시각과 함께 전체 순서를 보여 주고, 찬양을 누르면 그 곡으로 이동합니다.</li>
+      <li><strong>악보 위 필기</strong> — 로그인한 팀원은 악보에 펜·형광펜으로 표시할 수 있고, 다른 사람 화면에도 보입니다. (<a href="#annotate">필기 공유</a>)</li>
       <li><strong>곡 넘기기</strong> — 화살표 버튼을 누르거나, 휴대폰·태블릿에서는 악보를 <strong>좌우로 밀어서</strong> 넘깁니다.</li>
       <li><span class="ui">맞춤</span> · <span class="ui">−</span> · <span class="ui">+</span> — 악보 전체를 화면에 맞추거나 확대·축소합니다.</li>
       <li><span class="ui">⊞ 목록</span> — 여러 장 악보를 한눈에 보고 원하는 장으로 이동합니다.</li>
@@ -413,6 +501,41 @@
       <li>예배 전에 팀원 모두 같은 링크에 들어와 첫 곡이 맞게 보이는지 한 번 확인하세요.</li>
     </ul>
     <div class="warn">공유 링크(비밀번호를 걸었다면 비밀번호까지)를 아는 사람은 누구나 곡을 넘길 수 있습니다. 예배 중에는 인도자만 넘기도록 미리 약속하고, 링크는 팀원에게만 보내 주세요.</div>
+  </section>
+
+  <!-- 필기 -->
+  <section id="annotate">
+    <h2>✏️ 악보 위 필기 공유</h2>
+    <p class="lead">공유 화면의 악보에 반복 표시·브레이크·셈여림 등을 펜으로 적으면 같은 링크를 연 팀원 화면에도 나타납니다.</p>
+    <ol class="steps">
+      <li>앱에 <strong>로그인한 기기</strong>에서 공유 링크를 엽니다. (그 콘티를 볼 수 있는 팀원만 쓸 수 있습니다)</li>
+      <li>악보 위 도구 막대에서 <span class="ui">펜</span> 또는 <span class="ui">형광펜</span>과 색을 고르고 악보 위에 그립니다.</li>
+      <li><span class="ui">지우개</span>는 선을 한 줄씩 지우고, <span class="ui">되돌리기</span>는 방금 한 것을 취소, <span class="ui">전체 지우기</span>는 그 곡의 필기를 모두 지웁니다.</li>
+      <li>다 그렸으면 <span class="ui">보기</span>로 바꿔야 화면을 밀어서 곡을 넘길 수 있습니다.</li>
+    </ol>
+    <ul>
+      <li>그린 내용은 잠시 뒤 자동으로 저장되고(<em>저장됨</em> 표시), 다른 팀원 화면에는 <strong>몇 초 안에</strong> 나타납니다.</li>
+      <li>두 사람이 동시에 그려도 서로의 필기가 합쳐집니다. "다른 사람이 수정해서 다시 불러왔어요"가 나오면 최신 필기로 맞춘 것입니다.</li>
+      <li>로그인하지 않고 링크만 받은 사람은 필기를 <strong>볼 수만</strong> 있고, <span class="ui">필기 보기 끄기</span>로 숨길 수 있습니다.</li>
+      <li>필기는 <strong>그 콘티의 그 곡</strong>에만 붙습니다. 다른 콘티의 같은 곡에는 보이지 않고, 곡 원본 악보도 바뀌지 않습니다. 콘티를 지우면 필기도 함께 지워집니다.</li>
+    </ul>
+  </section>
+
+  <!-- 설치·오프라인 -->
+  <section id="offline">
+    <h2>📲 앱으로 설치 · 오프라인 악보</h2>
+    <h3>휴대폰에 앱처럼 설치</h3>
+    <ul>
+      <li><strong>안드로이드·크롬</strong> — 오른쪽 위 <span class="ui">📲 앱으로 설치</span>를 누르고 <span class="ui">설치</span>를 누르면 홈 화면에 RAON 아이콘이 생깁니다.</li>
+      <li><strong>아이폰·아이패드</strong> — Safari에서 공유 버튼 → <span class="ui">홈 화면에 추가</span>를 누릅니다. 앱 안에 같은 안내가 나옵니다.</li>
+      <li>이미 설치했다면 버튼이 보이지 않습니다.</li>
+    </ul>
+    <h3>인터넷이 약한 예배당에서</h3>
+    <ol class="steps">
+      <li>예배 전 인터넷이 될 때 콘티 상세 화면에서 <span class="ui">악보 오프라인 저장</span>을 누릅니다. "악보 n장을 이 기기에 저장했습니다"가 나오면 끝입니다.</li>
+      <li>그 기기에서 한 번 열어 본 공유 링크는 인터넷이 끊겨도 마지막으로 본 내용으로 열립니다.</li>
+    </ol>
+    <div class="tip"><b>기기마다 따로</b> — 저장은 누른 기기에만 됩니다. 무대에서 쓸 휴대폰·태블릿에서 각각 눌러 주세요. 인터넷이 끊긴 동안에는 실시간 동기화·필기 저장이 되지 않습니다.</div>
   </section>
 
   <!-- 9. 팀 -->
@@ -438,6 +561,34 @@
     </ul>
   </section>
 
+  <!-- 팀 소식 -->
+  <section id="teamnews">
+    <h2>🔔 팀 소식 · 배정 · 기도제목 · 출석</h2>
+    <p class="lead">팀 공간에서만 쓰는 기능입니다. 알림 문자·메일은 보내지 않고, 앱 안의 <span class="ui">팀 소식</span> 탭과 빨간 숫자로 알려 줍니다.</p>
+    <h3>팀원 배정 (콘티 화면)</h3>
+    <ol class="steps">
+      <li>팀 콘티 상세 화면의 <strong>팀원 배정</strong>에서 역할(인도 · 싱어 · 건반 · 일렉 · 베이스 · 드럼 · 어쿠스틱 · 음향 · 자막 · 기타)과 팀원을 고르고 <span class="ui">배정</span>을 누릅니다.</li>
+      <li>그 팀원이 예배 날짜를 <strong>못 나오는 날</strong>로 표시해 두었다면 "이 날 못 나온다고 표시함"이 함께 보입니다.</li>
+      <li>배정받은 팀원은 <span class="ui">팀 소식</span> 탭의 <strong>내 배정</strong>에서 <span class="ui">수락</span> 또는 <span class="ui">거절</span>(이유 선택)을 누릅니다. 상태는 콘티 화면에 <em>대기 · 수락 · 거절</em>로 보입니다.</li>
+      <li>배정을 뺄 수 있는 사람은 배정한 사람, 배정받은 본인, 팀장입니다.</li>
+    </ol>
+    <h3>못 나오는 날</h3>
+    <p><span class="ui">팀 소식</span> 탭에서 날짜와 메모(예: 출장)를 넣어 두면 팀 모두가 볼 수 있고, 배정할 때 경고로 나옵니다. 지우기는 본인만 할 수 있습니다.</p>
+    <h3>공지 · 기도제목</h3>
+    <ul>
+      <li>누구나 <strong>공지</strong>나 <strong>기도제목</strong>을 쓸 수 있습니다. 팀장은 공지를 맨 위에 <strong>고정</strong>할 수 있습니다.</li>
+      <li>기도제목에는 <span class="ui">함께 기도해요</span>를 눌러 마음을 보탤 수 있고, 몇 명이 함께 기도하는지 보입니다.</li>
+      <li>새 글이 올라오면 탭에 빨간 숫자가 붙고, 탭을 열어 보면 사라집니다.</li>
+      <li>글은 쓴 사람이나 팀장이 지울 수 있습니다. 너무 많이 올리지 않도록 15분에 30개까지 쓸 수 있습니다.</li>
+    </ul>
+    <h3>출석</h3>
+    <ul>
+      <li>예배·연습·기타 모임을 만들고 온 팀원을 체크합니다. 팀원 누구나 체크할 수 있습니다.</li>
+      <li>최근 3개월 동안 팀원별 <strong>출석률</strong>과 전체 모임 수가 보입니다.</li>
+      <li>모임 기록은 만든 사람이나 팀장이 지울 수 있습니다.</li>
+    </ul>
+  </section>
+
   <!-- 10. 권한 -->
   <section id="roles">
     <h2>🔐 누가 무엇을 할 수 있나요</h2>
@@ -455,6 +606,20 @@
           <tr><td>악보 사진 올리기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
           <tr><td>공유 링크 만들기 · 공유 비밀번호 걸기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
           <tr><td>공유 화면에서 곡 넘기기</td><td class="y">○</td><td class="y">○</td><td class="y">○ (비밀번호가 있으면 비밀번호 필요)</td></tr>
+          <tr><td>예배 순서 · 시간 · 예배 종류 정하기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
+          <tr><td>템플릿 저장 · 템플릿으로 콘티 만들기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
+          <tr><td>템플릿 지우기</td><td class="y">○</td><td class="n">내가 만든 것만</td><td class="n">✕</td></tr>
+          <tr><td>곡 분류 넣기 · 상세 검색</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
+          <tr><td>악보 위 필기</td><td class="y">○</td><td class="y">○</td><td class="n">보기만</td></tr>
+          <tr><td>무대 모드 · 예배 순서 보기</td><td class="y">○</td><td class="y">○</td><td class="y">○</td></tr>
+          <tr><td>팀원 배정하기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
+          <tr><td>배정 빼기</td><td class="y">○</td><td class="n">내가 배정했거나 나에게 온 것</td><td class="n">✕</td></tr>
+          <tr><td>배정 수락 · 거절</td><td class="y">나에게 온 것</td><td class="y">나에게 온 것</td><td class="n">✕</td></tr>
+          <tr><td>못 나오는 날 표시</td><td class="y">내 날짜</td><td class="y">내 날짜</td><td class="n">✕</td></tr>
+          <tr><td>공지 · 기도제목 쓰기</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
+          <tr><td>공지 고정</td><td class="y">○</td><td class="n">✕</td><td class="n">✕</td></tr>
+          <tr><td>글 지우기</td><td class="y">○</td><td class="n">내가 쓴 것만</td><td class="n">✕</td></tr>
+          <tr><td>출석 체크</td><td class="y">○</td><td class="y">○</td><td class="n">✕</td></tr>
           <tr><td>팀원 비밀번호 초기화</td><td class="y">○</td><td class="n">✕</td><td class="n">✕</td></tr>
           <tr><td>팀 삭제</td><td class="y">○</td><td class="n">✕ (나가기만)</td><td class="n">✕</td></tr>
           <tr><td>즐겨찾기 ★</td><td class="y">나만의 목록</td><td class="y">나만의 목록</td><td class="n">✕</td></tr>
@@ -470,6 +635,7 @@
     <h2>🎸 연습 도구</h2>
     <p class="lead">설치 없이 브라우저에서 바로 씁니다. <span class="ui">연습 도구</span> 탭을 누르세요.</p>
     <div class="cards">
+      <div class="card"><b>▶️ 유튜브 구간 반복</b><p>곡을 고르거나 유튜브 주소를 넣고, <span class="ui">A 지점</span> · <span class="ui">B 지점</span>을 찍은 뒤 <span class="ui">구간 반복</span>을 켜면 그 부분만 반복됩니다. 속도 0.5 · 0.75 · 1 · 1.25배, ±5초 이동도 됩니다.</p></div>
       <div class="card"><b>🥁 메트로놈</b><p>BPM을 정하고 <span class="ui">▶ 시작</span>. 박자(4/4 · 3/4 · 6/8 · 2/4)를 고를 수 있고, <span class="ui">탭</span>을 여러 번 누르면 그 빠르기로 BPM을 자동으로 잽니다.</p></div>
       <div class="card"><b>🎸 크로매틱 튜너</b><p><span class="ui">🎤 시작</span>을 누르고 마이크 사용을 허락하면 음 이름과 높낮이(▲ 올려야 / ▼ 내려야 / ✓ 정확)를 알려 줍니다.</p></div>
       <div class="card"><b>🎸 카포 계산기</b><p>악보 Key와 카포 위치를 고르면 실제로 나는 소리의 Key를 계산하고, 카포 위치별 Key 목록도 보여 줍니다.</p></div>
@@ -578,6 +744,26 @@
     <details>
       <summary>인쇄했더니 악보가 잘리거나 여백이 생겨요</summary>
       <p>인쇄 창에서 여백을 <strong>없음</strong>으로, 배율은 <strong>기본(100%)</strong>으로 두세요. 용지 방향(세로/가로)이 앱에서 고른 용지와 같은지도 확인하세요.</p>
+    </details>
+    <details>
+      <summary>"처음 부르는 곡이에요" 같은 콘티 점검 안내가 떠요</summary>
+      <p>콘티를 고르는 데 참고하라는 안내일 뿐 오류가 아닙니다. 그대로 저장되고 공유·인쇄도 됩니다. "처음 부르는 곡"은 날짜가 지난 다른 콘티에 한 번도 들어간 적 없는 곡입니다.</p>
+    </details>
+    <details>
+      <summary>템플릿으로 만든 콘티에 곡이 이상한 자리에 들어가요</summary>
+      <p>곡은 <strong>비어 있는 찬양 자리</strong>부터 위에서 차례로 채워집니다. 원하는 자리가 아니면 <span class="ui">▲</span> <span class="ui">▼</span>로 옮기세요. 찬양 자리가 남으면 <span class="ui">삭제</span>로 지우면 됩니다.</p>
+    </details>
+    <details>
+      <summary>악보에 필기가 안 돼요</summary>
+      <p>앱에 <strong>로그인한 기기</strong>에서 공유 링크를 열어야 합니다. 그 콘티를 볼 수 있는 팀원만 쓸 수 있고, 링크만 받은 사람은 보기만 됩니다. 도구 막대에서 <span class="ui">펜</span>을 골랐는지도 확인하세요.</p>
+    </details>
+    <details>
+      <summary>인터넷이 끊기니 악보가 안 나와요</summary>
+      <p>미리 그 기기에서 <span class="ui">악보 오프라인 저장</span>을 눌러 두어야 합니다. 저장은 누른 기기에만 됩니다. (<a href="#offline">오프라인 악보</a>)</p>
+    </details>
+    <details>
+      <summary>팀 소식 탭에 "팀에서 쓰는 기능입니다"라고 나와요</summary>
+      <p>배정·공지·기도제목·출석은 팀 공간에서만 씁니다. 맨 위 작업 공간을 <span class="ui">팀: (팀 이름)</span>으로 바꾸세요.</p>
     </details>
     <details>
       <summary>찾는 곡이 목록에 없어요</summary>
