@@ -146,8 +146,30 @@
   .theme-toggle { background: none; border: 1px solid var(--line); color: var(--text-2); border-radius: 999px; padding: 4px 12px; font-size: 13px; cursor: pointer; }
   footer.meta { color: var(--text-2); font-size: 14px; text-align: center; padding: 18px 0 26px; }
 
+
+  /* 목차 (맨 위) */
+  nav.toc h2 span { font-weight: 400; font-size: 13px; }
+  .toc-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 20px; }
+  .toc-group h3 { font-size: 13px; margin: 0 0 4px !important; color: var(--text-2); letter-spacing: .02em; }
+  .toc-group ul { list-style: none; padding: 0; margin: 0; }
+  .toc-group li { margin: 0; }
+  .toc-group a { display: block; padding: 3px 0; color: var(--brand-ink); text-decoration: none; font-size: 15px; }
+  .toc-group a:hover { text-decoration: underline; }
+  /* 위에 붙는 목차 막대 */
+  .quickbar { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--surface) 94%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .quickbar-row { display: flex; align-items: center; gap: 10px; height: 48px; }
+  .quickbar button { background: var(--brand); color: #fff; border: none; border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 700; cursor: pointer; flex-shrink: 0; }
+  :root[data-theme="dark"] .quickbar button { color: #0b1210; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .quickbar button { color: #0b1210; } }
+  .quickbar .here { flex: 1; min-width: 0; font-size: 14px; font-weight: 600; color: var(--text-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .quickbar .to-top { font-size: 13px; color: var(--brand-ink); text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+  .toc-panel { max-height: min(70vh, 560px); overflow-y: auto; padding-bottom: 14px; }
+  .toc-panel .toc-grid { padding-top: 6px; }
+  .toc-panel a.current { font-weight: 800; }
+  section { scroll-margin-top: 60px; }
+  @media (max-width: 700px) { .toc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 420px) { .toc-group a { font-size: 14px; } .toc-grid { gap: 10px 14px; } }
   @media (max-width: 600px) {
-    nav.toc ol { columns: 1; }
     .cards { grid-template-columns: 1fr; }
     section { padding: 18px 16px 14px; }
     .go-btn { width: 100%; justify-content: center; }
@@ -167,11 +189,76 @@
   </div>
 </div>
 
+<!-- 화면 위에 늘 붙어 있는 목차 막대 -->
+<div class="quickbar" id="quickbar">
+  <div class="wrap quickbar-row">
+    <button type="button" id="tocBtn" aria-expanded="false" aria-controls="tocPanel">☰ 목차</button>
+    <span class="here" id="here" aria-live="polite">처음</span>
+    <a href="#top" class="to-top">↑ 맨 위</a>
+  </div>
+  <div class="wrap toc-panel" id="tocPanel" hidden></div>
+</div>
 <main class="wrap">
   <header class="hero">
     <h1>RAON music sheet 사용법</h1>
     <p>회원가입부터 콘티 작성, 예배 중 악보 넘기기, 팀 운영까지 처음 쓰는 분도 따라 할 수 있도록 정리했습니다.</p>
   </header>
+  <nav class="toc" id="toc" aria-label="목차">
+    <h2>목차 <span>— 누르면 그 내용으로 바로 갑니다</span></h2>
+    <div class="toc-grid">
+      <div class="toc-group">
+        <h3>시작하기</h3>
+        <ul>
+          <li><a href="#start">시작하기 (가입·로그인)</a></li>
+          <li><a href="#layout">화면 구성</a></li>
+          <li><a href="#workspace">작업 공간 (개인 / 팀)</a></li>
+        </ul>
+      </div>
+      <div class="toc-group">
+        <h3>곡</h3>
+        <ul>
+          <li><a href="#songs">곡 목록 · 곡 추가</a></li>
+          <li><a href="#classify">곡 분류 · 주제 · 상세 검색</a></li>
+          <li><a href="#favorites">즐겨찾기 ★</a></li>
+        </ul>
+      </div>
+      <div class="toc-group">
+        <h3>콘티 · 예배 준비</h3>
+        <ul>
+          <li><a href="#conti">콘티 만들기 · 콘티 점검</a></li>
+          <li><a href="#order">예배 순서 · 시간 계산</a></li>
+          <li><a href="#templates">예배 종류 · 템플릿</a></li>
+          <li><a href="#picker">콘티에 곡 고르기</a></li>
+          <li><a href="#print">인쇄 · PDF 저장</a></li>
+        </ul>
+      </div>
+      <div class="toc-group">
+        <h3>예배 중</h3>
+        <ul>
+          <li><a href="#share">공유 링크 · 악보 넘기기</a></li>
+          <li><a href="#annotate">악보 위 필기 공유</a></li>
+          <li><a href="#offline">앱 설치 · 오프라인 악보</a></li>
+        </ul>
+      </div>
+      <div class="toc-group">
+        <h3>팀</h3>
+        <ul>
+          <li><a href="#team">팀 만들기 · 초대</a></li>
+          <li><a href="#teamnews">팀 소식 · 배정 · 기도 · 출석</a></li>
+          <li><a href="#roles">누가 무엇을 할 수 있나요</a></li>
+        </ul>
+      </div>
+      <div class="toc-group">
+        <h3>그 밖에</h3>
+        <ul>
+          <li><a href="#tools">연습 도구</a></li>
+          <li><a href="#account">비밀번호 · 계정 · 이메일 찾기</a></li>
+          <li><a href="#copyright">저작권 안내</a></li>
+          <li><a href="#faq">자주 묻는 질문</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <div class="notice" role="note">
     <div class="icon">📢</div>
@@ -183,32 +270,6 @@
     </div>
   </div>
 
-  <nav class="toc" aria-label="목차">
-    <h2>목차</h2>
-    <ol>
-      <li><a href="#start">시작하기 (가입·로그인)</a></li>
-      <li><a href="#layout">화면 구성</a></li>
-      <li><a href="#workspace">작업 공간 (개인 / 팀)</a></li>
-      <li><a href="#songs">곡 목록 · 곡 추가</a></li>
-      <li><a href="#classify">곡 분류 · 상세 검색 · 부른 횟수</a></li>
-      <li><a href="#favorites">즐겨찾기 ★</a></li>
-      <li><a href="#conti">콘티 만들기 · 콘티 점검</a></li>
-      <li><a href="#order">예배 순서 · 시간 계산</a></li>
-      <li><a href="#templates">예배 종류 · 템플릿</a></li>
-      <li><a href="#picker">콘티에 곡 고르기</a></li>
-      <li><a href="#print">인쇄 · PDF 저장</a></li>
-      <li><a href="#share">공유 링크 · 예배 중 악보 넘기기</a></li>
-      <li><a href="#annotate">악보 위 필기 공유</a></li>
-      <li><a href="#offline">앱으로 설치 · 오프라인 악보</a></li>
-      <li><a href="#team">팀 만들기 · 초대</a></li>
-      <li><a href="#teamnews">팀 소식 · 배정 · 기도제목 · 출석</a></li>
-      <li><a href="#roles">누가 무엇을 할 수 있나요</a></li>
-      <li><a href="#tools">연습 도구</a></li>
-      <li><a href="#account">비밀번호 · 계정 · 이메일 찾기</a></li>
-      <li><a href="#copyright">저작권 안내</a></li>
-      <li><a href="#faq">자주 묻는 질문 · 문제 해결</a></li>
-    </ol>
-  </nav>
 
   <!-- 1. 시작하기 -->
   <section id="start">
@@ -817,6 +878,46 @@
       root.setAttribute('data-theme', next)
       try { localStorage.setItem('guideTheme', next) } catch (e) {}
     })
+  })()
+</script>
+<script>
+  // 위에 붙는 목차 막대: 목차 펼치기, 지금 읽는 부분 표시
+  (function () {
+    var btn = document.getElementById('tocBtn')
+    var panel = document.getElementById('tocPanel')
+    var here = document.getElementById('here')
+    panel.innerHTML = document.querySelector('#toc .toc-grid').outerHTML
+    var links = panel.querySelectorAll('a')
+
+    function setOpen(open) {
+      panel.hidden = !open
+      btn.setAttribute('aria-expanded', String(open))
+      btn.textContent = open ? '✕ 닫기' : '☰ 목차'
+    }
+    btn.addEventListener('click', function () { setOpen(panel.hidden) })
+    panel.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false) })
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false) })
+    document.addEventListener('click', function (e) { if (!panel.hidden && !e.target.closest('#quickbar')) setOpen(false) })
+
+    var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'))
+    var title = function (sec) { return sec.querySelector('h2').textContent.replace(/^[^0-9A-Za-z가-힣]+/, '').trim() }
+    function update() {
+      var current = null
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].getBoundingClientRect().top <= 80) current = sections[i]
+      }
+      here.textContent = current ? title(current) : '처음'
+      for (var j = 0; j < links.length; j++) {
+        links[j].classList.toggle('current', !!current && links[j].getAttribute('href') === '#' + current.id)
+      }
+    }
+    var ticking = false
+    window.addEventListener('scroll', function () {
+      if (ticking) return
+      ticking = true
+      requestAnimationFrame(function () { update(); ticking = false })
+    }, { passive: true })
+    update()
   })()
 </script>
 </body>
