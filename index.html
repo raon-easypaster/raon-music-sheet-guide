@@ -217,7 +217,7 @@
       <div class="toc-group">
         <h3>곡</h3>
         <ul>
-          <li><a href="#songs">곡 목록 · 곡 추가</a></li>
+          <li><a href="#songs">곡 목록 · 곡 추가 · 공용 곡 목록</a></li>
           <li><a href="#sheets">Key별 악보 · 여러 장 · PDF</a></li>
           <li><a href="#classify">곡 분류 · 주제 · 상세 검색</a></li>
           <li><a href="#favorites">즐겨찾기 ★</a></li>
@@ -327,6 +327,15 @@
   <!-- 4. 곡 목록 -->
   <section id="songs">
     <h2>🎵 곡 목록 · 곡 추가</h2>
+    <h3 id="library">📚 공용 곡 목록에서 가져오기</h3>
+    <p>곡을 하나하나 넣지 않아도 됩니다. 곡 목록 탭 맨 위 <strong>공용 곡 목록</strong>에는 관리자가 열어 둔 팀의 곡 <strong>정보</strong>(제목·아티스트·Key·BPM·주제·유튜브 등)가 있어, 가입한 누구나 내 곡으로 가져올 수 있습니다.</p>
+    <ol class="steps">
+      <li>맨 위 <strong>작업 공간</strong>에서 곡을 넣을 곳(내 개인 공간 또는 우리 팀)을 먼저 고릅니다.</li>
+      <li><span class="ui">📚 공용 곡 목록</span>의 <span class="ui">둘러보기</span>를 누르고, 찾기 칸에 제목·아티스트·주제를 넣습니다(띄어쓰기 상관없음).</li>
+      <li>가져올 곡에 체크하고 <span class="ui">고른 곡 가져오기</span>를 누릅니다. 찾은 곡을 한꺼번에 가져오려면 <span class="ui">찾은 곡 모두 가져오기</span>, 전부는 <span class="ui">전부 가져오기</span>를 누릅니다.</li>
+      <li>내 곡에 이미 같은 제목·아티스트가 있으면 <strong>이미 있음</strong>으로 표시되고 건너뜁니다.</li>
+    </ol>
+    <div class="tip"><b>악보는 함께 오지 않습니다</b> — 저작권 때문에 공용 곡 목록은 곡 정보만 나눕니다. 가져온 곡의 <span class="ui">수정</span>에서 우리 교회가 사용 권한을 가진 악보를 넣어 주세요. 가져온 곡은 내(우리 팀) 곡이 되어 자유롭게 고칠 수 있고, 원래 팀의 곡에는 영향이 없습니다.</div>
     <h3>곡 추가하기</h3>
     <ol class="steps">
       <li><span class="ui">곡 목록</span> 탭에서 <strong>곡 제목</strong>(필수)과 <strong>아티스트/원곡자</strong>를 입력합니다.</li>
@@ -390,7 +399,7 @@
 
     <h3>곡 찾기 · 보기 · 고치기</h3>
     <ul>
-      <li><strong>검색</strong> — <span class="ui">제목·아티스트·코드·태그 검색</span> 칸에 일부만 입력해도 찾아 줍니다. 주제 태그·찬송가 번호·성경구절·작사·작곡도 함께 찾습니다. 예: <code>손경민</code>, <code>Em</code>, <code>부활절</code>, <code>시편 23</code></li>
+      <li><strong>검색</strong> — <span class="ui">제목·아티스트·코드·태그 검색</span> 칸에 일부만 입력해도 찾아 줍니다. 주제 태그·찬송가 번호·성경구절·작사·작곡도 함께 찾습니다. <strong>띄어쓰기와 대소문자는 상관없습니다</strong> — <code>물위를</code>로도 "물 위를 걷는 자"가, <code>하나 님</code>으로도 "하나님의 부르심"이 찾아집니다. 콘티에서 곡을 고를 때의 검색도 같습니다. 예: <code>손경민</code>, <code>Em</code>, <code>부활절</code>, <code>시편 23</code></li>
       <li><strong>정렬</strong> — 등록순 · 제목순 · 아티스트순 · 코드순 · BPM순 · <strong>많이 부른 순</strong> · <strong>오래 안 부른 순</strong></li>
       <li><span class="ui">상세 검색 ▼</span> — 빠르기·박자·주제·절기·대상·특성·부른 기록으로 걸러 봅니다. (<a href="#classify">상세 검색</a>)</li>
       <li><span class="ui">보기</span> — 악보·영상·MR·송폼·메모를 한 화면에서 봅니다.</li>
@@ -669,6 +678,7 @@
       <li><strong>악보 위 필기</strong> — 로그인한 팀원은 악보에 펜·형광펜으로 표시할 수 있고, 다른 사람 화면에도 보입니다. (<a href="#annotate">필기 공유</a>)</li>
       <li><strong>곡 이동과 쪽 이동</strong> — 곡 목록·하단 곡 버튼·<span class="ui">⏮ 곡</span> <span class="ui">곡 ⏭</span>는 <em>곡</em>을, <span class="ui">‹ 이전 쪽</span> <span class="ui">다음 쪽 ›</span>은 <em>곡 안의 쪽</em>을 넘깁니다. 화면에 "곡 2/5 · 1/3쪽"처럼 지금 위치가 보입니다. 악보를 <strong>좌우로 밀거나 양옆을 누르면</strong> 남은 쪽을 먼저 넘기고, 마지막 쪽에서 다음 곡으로 넘어갑니다.</li>
       <li><strong>악보 크기</strong> — 악보 보기는 처음에 <strong>쪽 전체가 한 화면에</strong> 들어오게 맞춥니다. 오른쪽 위 <span class="ui">＋</span> <span class="ui">−</span>로 키우거나 줄이고, <span class="ui">↔</span>는 가로를 꽉 채우며, <span class="ui">전체</span>를 누르면 다시 쪽 전체로 돌아옵니다. 키운 상태에서는 악보를 밀어서 움직여 보고(이때는 밀어도 넘어가지 않음), 다른 곡으로 가면 다시 전체 보기로 돌아옵니다. 컴퓨터에서는 트랙패드를 오므리거나 Ctrl+휠로도 키우고 줄입니다.</li>
+      <li><strong>악보만 크게</strong> — 악보 보기 위쪽 <span class="ui">⛶ 악보만 크게</span>를 누르면 머리말·진행 막대·곡 정보 줄이 모두 숨고 악보만 화면 가득 나옵니다(지원하는 기기는 주소창까지 숨는 전체 화면). 왼쪽 위에 "곡 1/3 · 제목"과 진행 중 표시만 작게 남고, 넘기기·확대는 그대로 됩니다. <span class="ui">✕</span>(또는 <kbd>Esc</kbd>)로 돌아오며, 이 기기에서는 다음에도 기억합니다. 키보드 <kbd>F</kbd>로도 켜고 끕니다.</li>
       <li><strong>키보드·페이지 넘김 페달</strong> — 컴퓨터나 태블릿에 키보드·블루투스 페달을 연결했다면 <kbd>→</kbd> <kbd>↓</kbd> <kbd>PageDown</kbd> <kbd>스페이스</kbd>로 다음, <kbd>←</kbd> <kbd>↑</kbd> <kbd>PageUp</kbd>으로 이전으로 넘깁니다. <kbd>+</kbd> <kbd>−</kbd>는 확대·축소, <kbd>0</kbd>은 전체 보기입니다. 인도자가 <span class="ui">내가 진행하기</span> 상태에서 넘기면 따라가는 화면도 함께 넘어갑니다.</li>
       <li><strong>Key 알림</strong> — 콘티 Key와 악보 Key가 다르면 악보 위에 "⚠ Key 다름 · 이번 Key는 D, 등록 악보는 C입니다"가 나옵니다.</li>
       <li><span class="ui">맞춤</span> · <span class="ui">−</span> · <span class="ui">+</span> — 악보 전체를 화면에 맞추거나 확대·축소합니다.</li>
@@ -883,6 +893,7 @@
       <li><span class="ui">⛔ 사용 중지</span>를 누르면 그 계정은 로그인할 수 없고 쓰던 기기에서도 바로 로그아웃됩니다. 곡·콘티는 지워지지 않으며 <span class="ui">✅ 다시 사용하게 하기</span>로 언제든 되돌립니다.</li>
     </ol>
     <div class="tip"><b>관리자 등록</b> — 관리자는 앱 화면에서 지정하지 않고, Vercel 서버 설정 <strong>ADMIN_EMAILS</strong>에 이메일을 적어 등록합니다(여럿이면 쉼표로 구분). 먼저 그 이메일로 가입한 뒤 등록하세요. 내 계정과 다른 관리자 계정은 회원 관리 화면에서 바꿀 수 없으니, 내 비밀번호는 <span class="ui">비밀번호 변경</span>을 쓰세요.</div>
+    <p><strong>공용 곡 목록 정하기</strong> — 회원 관리 화면 아래 <span class="ui">📚 공용 곡 목록</span>에서 팀마다 <span class="ui">공용으로 열기</span>를 누르면 그 팀의 곡 정보(악보·MR·팀 메모 제외)가 모든 회원의 <a href="#library">공용 곡 목록</a>에 나옵니다. <span class="ui">공용 끄기</span>로 언제든 닫을 수 있고, 이미 가져간 곡은 가져간 사람의 곡으로 남습니다.</p>
   </section>
 
   <!-- 저작권 -->
@@ -928,6 +939,10 @@
     <details>
       <summary>실시간 진행을 시작했는데 악보가 안 보여요</summary>
       <p>콘티 화면의 <strong>실시간 진행</strong> 상자는 곡을 넘기는 리모컨이라 악보를 보여 주지 않습니다. 상자의 <span class="ui">📖 악보 화면 열기</span>를 누르면 공유 화면이 악보 보기로 열립니다. 팀원은 공유 링크에서 <span class="ui">인도자 따라가기</span>를 켜 두면 인도자가 넘길 때 악보가 같이 넘어갑니다.</p>
+    </details>
+    <details>
+      <summary>다른 사람 계정에는 곡이 몇 곡밖에 안 보여요</summary>
+      <p>곡은 각자의 개인 공간이나 팀에 들어 있어, 같은 팀이 아니면 서로의 곡이 보이지 않습니다. 같은 교회 찬양팀이면 팀 탭의 <strong>초대 코드</strong>로 팀에 들어오세요. 다른 교회·다른 팀이라면 곡 목록 맨 위 <a href="#library">공용 곡 목록</a>에서 곡 정보를 가져가면 됩니다(악보는 각자 넣습니다).</p>
     </details>
     <details>
       <summary>"사용이 중지된 계정입니다"라고 나와요</summary>
