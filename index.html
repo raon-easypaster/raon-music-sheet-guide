@@ -256,7 +256,7 @@
         <h3>그 밖에</h3>
         <ul>
           <li><a href="#tools">연습 도구</a></li>
-          <li><a href="#account">비밀번호 · 계정 · 이메일 찾기</a></li>
+          <li><a href="#account">비밀번호 · 계정 · 이메일 찾기 · 관리자 회원 관리</a></li>
           <li><a href="#copyright">저작권 안내</a></li>
           <li><a href="#faq">자주 묻는 질문</a></li>
         </ul>
@@ -270,7 +270,7 @@
       <b>곡 업데이트 안내 — 곡은 계속 추가됩니다</b>
       찬양팀이 함께 쓰는 곡 목록에 새 곡을 <strong>계속 업데이트</strong>하고 있습니다.
       찾는 곡이 아직 없다면 며칠 뒤 다시 확인해 주세요. 급하게 필요한 곡은 직접 추가하실 수 있습니다(<a href="#songs">곡 목록</a> 참고).
-      <br><small>2026년 11월 12일 기준</small>
+      <br><small>2026년 11월 16일 기준</small>
     </div>
   </div>
 
@@ -830,6 +830,7 @@
       </table>
     </div>
     <p>개인 공간의 곡·콘티는 언제나 <strong>본인만</strong> 보고, 고치고, 지울 수 있습니다.</p>
+    <div class="tip"><b>앱 관리자</b> — 팀장과 별개로, 서버 설정(ADMIN_EMAILS)에 등록된 <strong>관리자</strong>는 가입한 모든 회원을 보고 비밀번호 초기화·사용 중지를 할 수 있으며, 저작권 신고를 처리합니다. 관리자도 다른 팀의 곡·콘티를 앱 화면에서 고치지는 않습니다. (<a href="#admin">관리자 회원 관리</a>)</div>
   </section>
 
   <!-- 11. 연습 도구 -->
@@ -869,6 +870,16 @@
       <li>비밀번호를 바꾸기 전에는 다른 기능을 쓸 수 없고, 임시 비밀번호는 <strong>24시간 뒤 만료</strong>됩니다. 만료되었다면 팀장에게 다시 요청하세요.</li>
     </ol>
     <div class="warn">비밀번호(임시 비밀번호 포함)를 단체 대화방이나 화면 캡처로 공유하지 마세요. 꼭 본인에게만 직접 전달해 주세요.</div>
+    <p>팀장에게 연락이 안 되거나 팀이 없는 회원은 <strong>앱 관리자</strong>에게 요청하면 같은 방법으로 임시 비밀번호를 받을 수 있습니다.</p>
+
+    <h3 id="admin">관리자 회원 관리 (관리자만)</h3>
+    <p>관리자 계정으로 로그인하면 위쪽에 <span class="ui">👥 회원</span> 버튼이 보입니다.</p>
+    <ol class="steps">
+      <li><span class="ui">👥 회원</span>을 누르면 가입한 회원 목록이 나옵니다. 회원마다 <strong>팀(팀장 여부)·가입일·마지막 로그인·만든 곡·콘티 수</strong>를 볼 수 있고, 이메일로 찾을 수 있습니다.</li>
+      <li>회원을 누르고 <span class="ui">🔑 임시 비밀번호 만들기</span>를 누르면 임시 비밀번호가 <strong>한 번만</strong> 나옵니다. <span class="ui">복사</span>해서 그 회원에게 직접 알려 주세요. 24시간 동안 쓸 수 있고, 그 회원이 로그인해 둔 다른 기기는 모두 로그아웃됩니다.</li>
+      <li><span class="ui">⛔ 사용 중지</span>를 누르면 그 계정은 로그인할 수 없고 쓰던 기기에서도 바로 로그아웃됩니다. 곡·콘티는 지워지지 않으며 <span class="ui">✅ 다시 사용하게 하기</span>로 언제든 되돌립니다.</li>
+    </ol>
+    <div class="tip"><b>관리자 등록</b> — 관리자는 앱 화면에서 지정하지 않고, Vercel 서버 설정 <strong>ADMIN_EMAILS</strong>에 이메일을 적어 등록합니다(여럿이면 쉼표로 구분). 먼저 그 이메일로 가입한 뒤 등록하세요. 내 계정과 다른 관리자 계정은 회원 관리 화면에서 바꿀 수 없으니, 내 비밀번호는 <span class="ui">비밀번호 변경</span>을 쓰세요.</div>
   </section>
 
   <!-- 저작권 -->
@@ -910,6 +921,10 @@
     <details>
       <summary>가입한 이메일이 기억나지 않아요</summary>
       <p>로그인 화면의 <span class="ui">이메일·비밀번호를 잊으셨나요?</span>에서 이메일을 넣어 가입 여부를 확인하세요. 그래도 모르겠으면 팀장에게 문의하세요. (<a href="#account">이메일 찾기</a>)</p>
+    </details>
+    <details>
+      <summary>"사용이 중지된 계정입니다"라고 나와요</summary>
+      <p>앱 관리자가 이 계정 사용을 멈춘 상태입니다. 곡·콘티는 지워지지 않았으니 팀장이나 앱 관리자에게 문의하면 다시 쓸 수 있게 해 줍니다.</p>
     </details>
     <details>
       <summary>회원가입이 안 돼요</summary>
@@ -1029,7 +1044,7 @@
   </section>
 
   <footer class="meta">
-    RAON music sheet · 라온동행교회 찬양팀 · 2026년 11월 12일 기준 안내서
+    RAON music sheet · 라온동행교회 찬양팀 · 2026년 11월 16일 기준 안내서
     <br><button class="theme-toggle" type="button" id="themeToggle">🌓 화면 밝기 바꾸기</button>
     · <a href="#top">맨 위로 ↑</a>
   </footer>
